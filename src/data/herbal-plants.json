@@ -1,0 +1,38 @@
+{
+  "plants": [
+    {
+      "id": "aloe-vera",
+      "commonName": "Aloe Vera",
+      "scientificName": "Aloe barbadensis",
+      "family": "Asphodelaceae",
+      "description": "Succulent plant with healing properties. The gel from its leaves is widely used in medicine and cosmetics.",
+      "medicalUses": [
+        "Skin healing",
+        "Burns treatment",
+        "Digestive health",
+        "Anti-inflammatory"
+      ],
+      "images": ["/images/plants/aloe-vera-1.jpg", "/images/plants/aloe-vera-2.jpg"],
+      "location": "Section A, Row 3",
+      "season": "All year",
+      "category": "Medicinal"
+    },
+    {
+      "id": "tulsi",
+      "commonName": "Holy Basil",
+      "scientificName": "Ocimum sanctum",
+      "family": "Lamiaceae",
+      "description": "Sacred plant in India with numerous medicinal properties. Used in traditional Ayurvedic medicine.",
+      "medicalUses": [
+        "Respiratory disorders",
+        "Stress relief",
+        "Immune system boost",
+        "Anti-bacterial"
+      ],
+      "images": ["/images/plants/tulsi-1.jpg", "/images/plants/tulsi-2.jpg"],
+      "location": "Section B, Row 1",
+      "season": "Summer-Monsoon",
+      "category": "Medicinal"
+    }
+  ]
+}

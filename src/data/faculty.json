@@ -1,0 +1,38 @@
+{
+  "faculty": [
+    {
+      "id": "fac-001",
+      "name": "Dr. John Smith",
+      "designation": "Professor",
+      "department": "Pharmacology",
+      "qualifications": ["Ph.D. Pharmacology", "M.Pharm"],
+      "expertise": ["Drug Discovery", "Clinical Research"],
+      "image": "/images/faculty/john-smith.jpg",
+      "email": "john.smith@college.edu",
+      "publications": [
+        {
+          "title": "Novel Drug Delivery Systems",
+          "journal": "International Journal of Pharmaceutics",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "fac-002",
+      "name": "Dr. Sarah Johnson",
+      "designation": "Associate Professor",
+      "department": "Pharmaceutical Chemistry",
+      "qualifications": ["Ph.D. Pharmaceutical Sciences", "M.Pharm"],
+      "expertise": ["Medicinal Chemistry", "Drug Analysis"],
+      "image": "/images/faculty/sarah-johnson.jpg",
+      "email": "sarah.johnson@college.edu",
+      "publications": [
+        {
+          "title": "Modern Analytical Techniques in Drug Development",
+          "journal": "Journal of Pharmaceutical Analysis",
+          "year": 2025
+        }
+      ]
+    }
+  ]
+}
