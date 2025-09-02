@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  GraduationCap, 
-  BookOpen, 
-  Globe, 
-  Users, 
-  Award, 
+import {
+  GraduationCap,
+  BookOpen,
+  Globe,
+  Users,
+  Award,
   Building2,
   Microscope,
   Leaf,
@@ -18,18 +18,18 @@ import {
   Mail,
   MapPin,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const images = [
     "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp",
-    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp", 
-    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_2_c.webp"
+    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp",
+    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_2_c.webp",
   ];
 
   // Auto-rotate images
@@ -56,21 +56,24 @@ export default function HomePage() {
     {
       icon: <BookOpen className="h-8 w-8 text-white" />,
       title: "Quality Education",
-      description: "Excellence in Pharmaceutical Sciences through innovative teaching and research",
-      color: "bg-blue-600"
+      description:
+        "Excellence in Pharmaceutical Sciences through innovative teaching and research",
+      color: "bg-blue-600",
     },
     {
       icon: <Globe className="h-8 w-8 text-white" />,
       title: "Industry Connect",
-      description: "Strong partnerships with leading pharmaceutical companies and research institutions",
-      color: "bg-yellow-500"
+      description:
+        "Strong partnerships with leading pharmaceutical companies and research institutions",
+      color: "bg-yellow-500",
     },
     {
       icon: <Users className="h-8 w-8 text-white" />,
       title: "Expert Faculty",
-      description: "Experienced professors and researchers dedicated to student success",
-      color: "bg-blue-600"
-    }
+      description:
+        "Experienced professors and researchers dedicated to student success",
+      color: "bg-blue-600",
+    },
   ];
 
   const achievements = [
@@ -81,7 +84,7 @@ export default function HomePage() {
     { number: "07", label: "Industry MoUs" },
     { number: "53", label: "Books/Chapters" },
     { number: "451", label: "Publications" },
-    { number: "50", label: "Research Grants" }
+    { number: "50", label: "Research Grants" },
   ];
 
   const programs = [
@@ -90,22 +93,25 @@ export default function HomePage() {
       duration: "4 Years",
       intake: "100 Seats",
       fees: "₹1,55,000/year",
-      description: "Comprehensive pharmacy education with hands-on training and industry exposure"
+      description:
+        "Comprehensive pharmacy education with hands-on training and industry exposure",
     },
     {
       title: "M.Pharm",
       duration: "2 Years",
       intake: "15 Seats each",
       fees: "₹2,00,000/year",
-      description: "Specialized programs in Pharmaceutical Technology, Pharmacology, Quality Assurance, and more"
+      description:
+        "Specialized programs in Pharmaceutical Technology, Pharmacology, Quality Assurance, and more",
     },
     {
       title: "Ph.D.",
       duration: "3-5 Years",
       intake: "Research Based",
       fees: "As per University norms",
-      description: "Advanced research programs in pharmaceutical sciences and drug development"
-    }
+      description:
+        "Advanced research programs in pharmaceutical sciences and drug development",
+    },
   ];
 
   return (
@@ -113,7 +119,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <motion.div 
+        <motion.div
           key={currentImageIndex}
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -123,7 +129,7 @@ export default function HomePage() {
           animate={{ opacity: 0.8, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        
+
         <div className="relative z-20 container mx-auto px-4 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -137,38 +143,38 @@ export default function HomePage() {
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                 A Right Course to Take
-                <span className="block text-yellow-400">Ramanbhai Patel College of Pharmacy</span>
+                <span className="block text-yellow-400">
+                  Ramanbhai Patel College of Pharmacy
+                </span>
               </h1>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Prescription for Promising Future in Pharma Industry. Hands on Training Through State of Art Infrastructure.
+                Prescription for Promising Future in Pharma Industry. Hands on
+                Training Through State of Art Infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 text-lg font-semibold">
+                <Button
+                  size="lg"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 text-lg font-semibold"
+                >
                   Apply Now
                 </Button>
-                <Button size="lg" variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-blue-900 px-8 py-4 text-lg font-semibold">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-blue-900 px-8 py-4 text-lg font-semibold"
+                >
                   Learn More
                 </Button>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold mb-6 text-center">Quick Stats</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  {achievements.slice(0, 4).map((achievement, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl font-bold text-yellow-400">{achievement.number}</div>
-                      <div className="text-sm text-gray-300">{achievement.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* Quick Stats section removed as requested */}
             </motion.div>
           </div>
         </div>
@@ -188,9 +194,12 @@ export default function HomePage() {
               <Building2 className="h-6 w-6" />
               <span className="text-sm font-medium">Campus Gallery</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Discover Our Campus</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Discover Our Campus
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the state-of-the-art infrastructure and beautiful campus of Ramanbhai Patel College of Pharmacy
+              Explore the state-of-the-art infrastructure and beautiful campus
+              of Ramanbhai Patel College of Pharmacy
             </p>
           </motion.div>
 
@@ -212,10 +221,10 @@ export default function HomePage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               />
-              
+
               {/* Overlay with gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-              
+
               {/* Navigation Buttons */}
               <div className="absolute inset-0 flex items-center justify-between p-6 z-10">
                 <motion.button
@@ -250,21 +259,21 @@ export default function HomePage() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => goToImage(index)}
-                                     className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                     currentImageIndex === index 
-                       ? "bg-yellow-500 scale-125 shadow-lg" 
-                       : "bg-gray-400 hover:bg-gray-500"
-                   }`}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                    currentImageIndex === index
+                      ? "bg-yellow-500 scale-125 shadow-lg"
+                      : "bg-gray-400 hover:bg-gray-500"
+                  }`}
                 ></motion.button>
               ))}
             </div>
 
             {/* Auto-play indicator */}
             <div className="text-center mt-4">
-                           <div className="inline-flex items-center space-x-2 text-gray-500 text-sm">
-               <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-               <span>Auto-rotating every 5 seconds</span>
-             </div>
+              <div className="inline-flex items-center space-x-2 text-gray-500 text-sm">
+                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                <span>Auto-rotating every 5 seconds</span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -284,11 +293,17 @@ export default function HomePage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-8 text-center">
-                    <div className={`${feature.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6`}>
+                    <div
+                      className={`${feature.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6`}
+                    >
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -315,15 +330,18 @@ export default function HomePage() {
                 A Few Words About the University
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). 
-                RPCP was established in 2004 to promote excellence in Pharmacy Education and to prepare young talent for Industrial Pharmacy and Pharmacy Practice.
+                Ramanbhai Patel College of Pharmacy (RPCP) is a constituent
+                Institute of Charotar University of Science and Technology
+                (CHARUSAT). RPCP was established in 2004 to promote excellence
+                in Pharmacy Education and to prepare young talent for Industrial
+                Pharmacy and Pharmacy Practice.
               </p>
               <div className="bg-blue-600 text-white p-6 rounded-lg inline-block">
                 <div className="text-3xl font-bold">25+</div>
                 <div className="text-sm">Years of Experience</div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -360,9 +378,12 @@ export default function HomePage() {
               <GraduationCap className="h-6 w-6" />
               <span className="text-sm font-medium">Our Programs</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Academic Programs</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Academic Programs
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive pharmacy education programs designed to prepare students for successful careers in the pharmaceutical industry
+              Comprehensive pharmacy education programs designed to prepare
+              students for successful careers in the pharmaceutical industry
             </p>
           </motion.div>
 
@@ -380,7 +401,9 @@ export default function HomePage() {
                     <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                       <GraduationCap className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {program.title}
+                    </h3>
                     <div className="space-y-3 mb-6">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Duration:</span>
@@ -395,7 +418,9 @@ export default function HomePage() {
                         <span className="font-medium">{program.fees}</span>
                       </div>
                     </div>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{program.description}</p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {program.description}
+                    </p>
                     <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                       Learn More →
                     </Button>
@@ -419,7 +444,8 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold mb-6">RPCP SCALARS</h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-              Our achievements reflect our commitment to excellence in pharmaceutical education and research
+              Our achievements reflect our commitment to excellence in
+              pharmaceutical education and research
             </p>
           </motion.div>
 
@@ -434,7 +460,9 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">{achievement.number}</div>
+                  <div className="text-4xl font-bold text-yellow-400 mb-2">
+                    {achievement.number}
+                  </div>
                   <div className="text-blue-200">{achievement.label}</div>
                 </div>
               </motion.div>
@@ -453,44 +481,52 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Get In Touch
+              </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Ready to start your journey in pharmaceutical sciences? Contact us for more information about our programs and admission process.
+                Ready to start your journey in pharmaceutical sciences? Contact
+                us for more information about our programs and admission
+                process.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                                  <div className="bg-blue-600 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-white" />
-                </div>
+                  <div className="bg-blue-600 p-3 rounded-lg">
+                    <Phone className="h-6 w-6 text-white" />
+                  </div>
                   <div>
                     <div className="font-medium text-gray-900">Phone</div>
                     <div className="text-gray-600">+91 7052 101 786</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
-                                  <div className="bg-blue-600 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-white" />
-                </div>
+                  <div className="bg-blue-600 p-3 rounded-lg">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
                   <div>
                     <div className="font-medium text-gray-900">Email</div>
-                    <div className="text-gray-600">info@rpcp.charusat.ac.in</div>
+                    <div className="text-gray-600">
+                      info@rpcp.charusat.ac.in
+                    </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
-                                  <div className="bg-blue-600 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-white" />
-                </div>
+                  <div className="bg-blue-600 p-3 rounded-lg">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
                   <div>
                     <div className="font-medium text-gray-900">Address</div>
-                    <div className="text-gray-600">CHARUSAT Campus, Changa, Anand, Gujarat</div>
+                    <div className="text-gray-600">
+                      CHARUSAT Campus, Changa, Anand, Gujarat
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -498,7 +534,9 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Make An Contact</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Make An Contact
+                </h3>
                 <div className="space-y-4">
                   <input
                     type="text"
