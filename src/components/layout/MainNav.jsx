@@ -18,26 +18,7 @@ const navStructure = {
   main: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    {
-      label: "Programs",
-      items: [
-        {
-          href: "/programs/bpharm",
-          label: "B.Pharm",
-          description: "4-year Bachelor of Pharmacy program",
-        },
-        {
-          href: "/programs/mpharm",
-          label: "M.Pharm",
-          description: "2-year Master of Pharmacy specializations",
-        },
-        {
-          href: "/programs/phd",
-          label: "Ph.D.",
-          description: "Doctoral research programs",
-        },
-      ],
-    },
+    { href: "/programs", label: "Programs" },
     {
       label: "Facilities",
       items: [

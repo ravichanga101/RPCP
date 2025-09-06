@@ -17,40 +17,10 @@ import {
   Phone,
   Mail,
   MapPin,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [
-    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp",
-    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp",
-    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_2_c.webp",
-  ];
-
-  // Auto-rotate images
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const goToImage = (index) => {
-    setCurrentImageIndex(index);
-  };
 
   const features = [
     {
@@ -119,15 +89,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <motion.div
-          key={currentImageIndex}
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${images[currentImageIndex]})`,
+            backgroundImage: `url("https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp")`,
           }}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.8, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
         />
 
         <div className="relative z-20 container mx-auto px-4 py-20 lg:py-32">
@@ -180,104 +146,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Image Carousel Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
-              <Building2 className="h-6 w-6" />
-              <span className="text-sm font-medium">Campus Gallery</span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Discover Our Campus
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the state-of-the-art infrastructure and beautiful campus
-              of Ramanbhai Patel College of Pharmacy
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative max-w-6xl mx-auto"
-          >
-            {/* Main Image Container */}
-            <div className="relative w-full h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <motion.img
-                key={currentImageIndex}
-                src={images[currentImageIndex]}
-                alt={`RPCP Campus Image ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              />
-
-              {/* Overlay with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-
-              {/* Navigation Buttons */}
-              <div className="absolute inset-0 flex items-center justify-between p-6 z-10">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={prevImage}
-                  className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 border border-white/30 transition-all duration-300 shadow-lg"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={nextImage}
-                  className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 border border-white/30 transition-all duration-300 shadow-lg"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </motion.button>
-              </div>
-
-              {/* Image Counter */}
-              <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                {currentImageIndex + 1} / {images.length}
-              </div>
-            </div>
-
-            {/* Thumbnail Navigation */}
-            <div className="flex justify-center space-x-3 mt-6">
-              {images.map((_, index) => (
-                <motion.button
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => goToImage(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    currentImageIndex === index
-                      ? "bg-yellow-500 scale-125 shadow-lg"
-                      : "bg-gray-400 hover:bg-gray-500"
-                  }`}
-                ></motion.button>
-              ))}
-            </div>
-
-            {/* Auto-play indicator */}
-            <div className="text-center mt-4">
-              <div className="inline-flex items-center space-x-2 text-gray-500 text-sm">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-                <span>Auto-rotating every 5 seconds</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
