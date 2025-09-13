@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ImageCarousel from "@/components/shared/ImageCarousel";
 import {
   GraduationCap,
   BookOpen,
@@ -21,6 +22,12 @@ import {
 import Link from "next/link";
 
 export default function HomePage() {
+  // Carousel images
+  const carouselImages = [
+    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_1_c.webp",
+    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_2_c.webp",
+    "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp"
+  ];
 
   const features = [
     {
@@ -87,16 +94,16 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url("https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp")`,
-          }}
-        />
+      <section className="relative text-white overflow-hidden h-screen min-h-[600px]">
+        {/* Image Carousel Background */}
+        <div className="absolute inset-0 z-0">
+          <ImageCarousel 
+            images={carouselImages}
+            autoPlayInterval={3000}
+          />
+        </div>
 
-        <div className="relative z-20 container mx-auto px-4 py-20 lg:py-32">
+        <div className="relative z-20 container mx-auto px-4 py-20 lg:py-32 h-full flex items-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
