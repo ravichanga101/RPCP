@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Search, GraduationCap, ChevronDown } from "lucide-react";
+import { Menu, GraduationCap, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import {
@@ -19,7 +19,6 @@ import {
 const navStructure = {
   main: [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
     { href: "/programs", label: "Programs" },
     {
       label: "Facilities",
@@ -44,6 +43,7 @@ const navStructure = {
     { href: "/research", label: "Research" },
     { href: "/placement", label: "Placement" },
     { href: "/faculty", label: "Faculty" },
+    { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
   ],
 };
@@ -108,7 +108,7 @@ export function MainNav() {
                     ) : (
                                              <Link
                         href={item.href}
-                        className={`h-10 px-4 inline-flex items-center text-sm font-medium transition-all duration-300 relative hover:underline decoration-yellow-300 decoration-2 underline-offset-4 ${
+                        className={`h-10 px-4 inline-flex items-center text-sm font-medium transition-all duration-300 relative hover:underline decoration-yellow-300 decoration-2 underline-offset-4 whitespace-nowrap ${
                           pathname === item.href
                             ? "text-yellow-300"
                             : "text-white hover:text-yellow-300"
@@ -123,14 +123,9 @@ export function MainNav() {
             </NavigationMenu>
           </div>
 
-          {/* Right Side Actions */}
+          {/* Right Side Actions - Removed for now */}
           <div className="hidden lg:flex items-center space-x-4">
-                         <Button variant="ghost" size="sm" className="text-white hover:text-yellow-300 hover:bg-white/10 transition-all duration-300">
-               <Search className="h-5 w-5" />
-             </Button>
-             <Button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg">
-               ADMISSION OPEN
-             </Button>
+            {/* Buttons removed as requested */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -183,7 +178,7 @@ export function MainNav() {
                       ) : (
                         <Link
                           href={item.href}
-                          className="block px-3 py-3 text-base font-medium hover:bg-white/5 rounded-md transition-colors"
+                          className="block px-3 py-3 text-base font-medium hover:bg-white/5 rounded-md transition-colors whitespace-nowrap"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.label}
@@ -192,16 +187,7 @@ export function MainNav() {
                     </div>
                   ))}
                 </div>
-                <div className="pt-4 mt-4 border-t border-white/10">
-                  <div className="flex items-center gap-2 px-2">
-                    <Button variant="ghost" size="sm" className="text-white hover:text-yellow-300 hover:bg-white/10">
-                      <Search className="h-5 w-5" />
-                    </Button>
-                    <Button className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-medium transition-all duration-300 hover:scale-[1.02] shadow-lg">
-                      ADMISSION OPEN
-                    </Button>
-                  </div>
-                </div>
+                {/* Mobile action buttons removed as requested */}
               </div>
             </SheetContent>
           </Sheet>
