@@ -18,16 +18,16 @@ import {
 export default function AboutPage() {
   const visionMission = [
     {
-      icon: <Eye className="h-12 w-12 text-orange-500" />,
+      icon: <Eye className="h-7 w-7 text-blue-600" />,
       title: "Vision",
       description: "To Become a Premier Pharma Institute by Creating World Class Pharmacists and Researchers.",
-      color: "border-orange-500"
+      color: "from-blue-50 to-indigo-50"
     },
     {
-      icon: <Target className="h-12 w-12 text-blue-500" />,
+      icon: <Target className="h-7 w-7 text-emerald-600" />,
       title: "Mission",
       description: "To Strive for the Excellence in Pharmaceutical Sciences through Quality Education and Research.",
-      color: "border-blue-500"
+      color: "from-emerald-50 to-teal-50"
     }
   ];
 
@@ -58,34 +58,31 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-20">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 container mx-auto px-4 text-center">
+      <section className="py-16 bg-gradient-to-b from-blue-50 via-white to-white">
+        <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            <div className="flex items-center justify-center space-x-2 text-orange-400 mb-4">
-              <GraduationCap className="h-6 w-6" />
+            <div className="flex items-center justify-center gap-2 text-blue-600 mb-3">
+              <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-medium">About RPCP</span>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              About Ramanbhai Patel
-              <span className="block text-orange-400">College of Pharmacy</span>
-            </h1>
-            <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              A premier institute for pharmaceutical education, established in 2004 under CHARUSAT, 
-              dedicated to excellence in pharmacy education and research.
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3">Ramanbhai Patel College of Pharmacy</h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+              A constituent institute of CHARUSAT, advancing pharmaceutical education and research since 2004.
             </p>
+            <div className="w-24 h-[3px] bg-blue-600/90 mx-auto mt-8 rounded-full"></div>
           </motion.div>
         </div>
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8">
             {visionMission.map((item, index) => (
               <motion.div
                 key={index}
@@ -94,15 +91,17 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full border-t-4 hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-8 text-center">
-                    <div className="flex justify-center mb-6">
+                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className={`bg-gradient-to-br ${item.color} rounded-t-2xl p-5 flex items-center justify-center`}>
+                    <div className="bg-white/90 rounded-full h-12 w-12 flex items-center justify-center shadow-sm">
                       {item.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <div className="p-8 text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -119,10 +118,10 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 A Legacy of Excellence in Pharmaceutical Education
               </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-5 text-base md:text-lg text-gray-600 leading-relaxed">
                 <p>
                   Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). 
                   RPCP was established in 2004 to promote excellence in Pharmacy Education and to prepare young talent for Industrial Pharmacy and Pharmacy Practice.
@@ -133,8 +132,7 @@ export default function AboutPage() {
                   patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and their families to monumentalize their father, Late Shri T. P. Patel.
                 </p>
                 <p>
-                  Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, 
-                  we are making learning more relevant and transformational.
+                  RPCP integrates rigorous academics with practical training in state-of-the-art laboratories, fostering a culture of inquiry, ethics, and societal impact.
                 </p>
               </div>
             </motion.div>
@@ -145,11 +143,11 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-orange-500 p-3 rounded-lg">
+                    <div className="bg-blue-600 p-3 rounded-lg">
                       <Building2 className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -159,7 +157,7 @@ export default function AboutPage() {
                   </div>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="bg-orange-500 p-3 rounded-lg">
+                    <div className="bg-blue-600 p-3 rounded-lg">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -169,7 +167,7 @@ export default function AboutPage() {
                   </div>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="bg-orange-500 p-3 rounded-lg">
+                    <div className="bg-blue-600 p-3 rounded-lg">
                       <Users className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -179,7 +177,7 @@ export default function AboutPage() {
                   </div>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="bg-orange-500 p-3 rounded-lg">
+                    <div className="bg-blue-600 p-3 rounded-lg">
                       <Award className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -195,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-16 bg-blue-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -204,8 +202,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Our Achievements</h2>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Achievements</h2>
+            <p className="text-base md:text-lg text-blue-200 max-w-3xl mx-auto">
               Over two decades of excellence in pharmaceutical education and research
             </p>
           </motion.div>
@@ -231,7 +229,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -240,8 +238,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
               Meet our experienced leaders who guide RPCP towards excellence in pharmaceutical education
             </p>
           </motion.div>
@@ -255,21 +253,21 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-6">
-                      <div className="bg-gray-200 rounded-lg w-24 h-24 flex-shrink-0"></div>
+                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="p-8">
+                    <div className="flex items-start gap-6">
+                      <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0" />
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                        <p className="text-lg text-orange-500 font-medium mb-2">{member.position}</p>
-                        <p className="text-gray-600 mb-4">Qualification: {member.qualification}</p>
-                        <p className="text-gray-600 leading-relaxed">
-                          <strong>Research Interests:</strong> {member.interests}
+                        <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                        <p className="text-sm font-medium text-blue-600 mb-2">{member.position}</p>
+                        <p className="text-sm text-gray-600 mb-3">Qualification: {member.qualification}</p>
+                        <p className="text-gray-700 text-sm leading-relaxed">
+                          <span className="font-semibold">Research Interests:</span> {member.interests}
                         </p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -277,7 +275,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -285,8 +283,8 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Join RPCP?</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Join RPCP?</h2>
+            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
               Start your journey in pharmaceutical sciences with one of the premier institutes in India
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ImageCarousel from "@/components/shared/ImageCarousel";
@@ -20,8 +20,24 @@ import {
   MapPin,
 } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  // Rotating tagline under the hero heading
+  const rotatingTaglines = [
+    "Project Based Learning",
+    "Research Excellence",
+    "Industry Connect",
+    "Holistic Development",
+  ];
+  const [taglineIndex, setTaglineIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTaglineIndex((prev) => (prev + 1) % rotatingTaglines.length);
+    }, 2500);
+    return () => clearInterval(intervalId);
+  }, []);
   // Carousel images
   const carouselImages = [
     "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_1_c.webp",
@@ -29,29 +45,7 @@ export default function HomePage() {
     "https://www.charusat.ac.in/rpcp/images/RPCP_Slider_3_c.webp"
   ];
 
-  const features = [
-    {
-      icon: <BookOpen className="h-8 w-8 text-white" />,
-      title: "Quality Education",
-      description:
-        "Excellence in Pharmaceutical Sciences through innovative teaching and research",
-      color: "bg-blue-600",
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-white" />,
-      title: "Industry Connect",
-      description:
-        "Strong partnerships with leading pharmaceutical companies and research institutions",
-      color: "bg-yellow-500",
-    },
-    {
-      icon: <Users className="h-8 w-8 text-white" />,
-      title: "Expert Faculty",
-      description:
-        "Experienced professors and researchers dedicated to student success",
-      color: "bg-blue-600",
-    },
-  ];
+  // Features section removed as per request
 
   const achievements = [
     { number: "08", label: "Patents" },
@@ -105,42 +99,62 @@ export default function HomePage() {
 
         <div className="relative z-20 container mx-auto px-4 py-8 sm:py-12 lg:py-16 xl:py-20 h-full flex items-center">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
-            >
-              <div className="flex items-center justify-center lg:justify-start space-x-2 text-yellow-400 mb-2 sm:mb-3">
+            <div className="text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: -12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex items-center justify-center lg:justify-start space-x-2 text-yellow-400 mb-2 sm:mb-3"
+              >
                 <GraduationCap className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="text-xs sm:text-sm font-medium">Welcome to RPCP</span>
-              </div>
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4">
-                A Right Course to Take
-                <span className="block text-yellow-400 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4"
+              >
+                <span className="block">A Right Course to Take</span>
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.35 }}
+                  className="block text-yellow-400 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+                >
                   Ramanbhai Patel College of Pharmacy
-                </span>
-              </h1>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 mb-4 sm:mb-6 leading-relaxed px-2 lg:px-0">
+                </motion.span>
+              </motion.h1>
+
+              {/* Rotating, animated sub-tagline */}
+              <div className="h-6 sm:h-7 md:h-8 lg:h-9 mb-2 sm:mb-3">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={taglineIndex}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.4 }}
+                    className="inline-block text-yellow-300/90 text-xs sm:text-sm md:text-base tracking-wide"
+                  >
+                    {rotatingTaglines[taglineIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 mb-4 sm:mb-6 leading-relaxed px-2 lg:px-0"
+              >
                 Prescription for Promising Future in Pharma Industry. Hands on
                 Training Through State of Art Infrastructure.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start">
-                <Button
-                  size="sm"
-                  className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold"
-                >
-                  Apply Now
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-blue-900 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold"
-                >
-                  Learn More
-                </Button>
-              </div>
-            </motion.div>
+              </motion.p>
+
+              {/* Hero buttons removed as requested */}
+            </div>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -373,28 +387,78 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Bottom CTA Section */}
+            {/* Bottom CTA Section removed as requested */}
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars Section under CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Project Based Learning */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mt-16 text-center"
             >
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 lg:p-12 text-white">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-                  Join Us in Our Journey
-                </h3>
-                <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-                  Be part of an institution that's committed to excellence in pharmaceutical education and research
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 font-semibold">
-                    Explore Programs
-                  </Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 font-semibold">
-                    Learn More
-                  </Button>
+              <div className="group relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-amber-400 ring-8 ring-amber-100 flex items-center justify-center shadow-xl">
+                    <GraduationCap aria-hidden="true" className="h-10 w-10 text-gray-900" />
+                  </div>
+                </div>
+                <div className="pt-20 pb-10 px-8 text-center">
+                  <div className="mx-auto mb-5 h-1 w-14 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900">
+                    Project Based Learning
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* State of the Art Research Facilities */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="group relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-amber-400 ring-8 ring-amber-100 flex items-center justify-center shadow-xl">
+                    <Microscope aria-hidden="true" className="h-10 w-10 text-gray-900" />
+                  </div>
+                </div>
+                <div className="pt-20 pb-10 px-8 text-center">
+                  <div className="mx-auto mb-5 h-1 w-14 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 leading-snug">
+                    State of the Art Research
+                    <span className="block">Facilities</span>
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Holistic Development */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="group relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-amber-400 ring-8 ring-amber-100 flex items-center justify-center shadow-xl">
+                    <Users aria-hidden="true" className="h-10 w-10 text-gray-900" />
+                  </div>
+                </div>
+                <div className="pt-20 pb-10 px-8 text-center">
+                  <div className="mx-auto mb-5 h-1 w-14 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900">
+                    Holistic Development
+                  </h3>
                 </div>
               </div>
             </motion.div>
@@ -402,38 +466,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-8 text-center">
-                    <div
-                      className={`${feature.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6`}
-                    >
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Features Section removed as requested */}
 
       {/* About Section */}
       <section className="py-20 bg-white">
