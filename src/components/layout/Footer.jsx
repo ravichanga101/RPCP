@@ -21,30 +21,7 @@ export function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Newsletter Section */}
-      <div className="bg-blue-800 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold mb-2 flex items-center justify-center lg:justify-start">
-                <Mail className="h-6 w-6 mr-2" />
-                Subscribe for Newsletter
-              </h3>
-              <p className="text-blue-200">Stay updated with our latest news and events</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Email Address..."
-                className="px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-orange-500 min-w-[300px]"
-              />
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3">
-                Subscribe Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Main Footer Content */}
       <div className="py-16">
