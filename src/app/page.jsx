@@ -800,6 +800,14 @@ export default function HomePage() {
       icon: <Microscope />,
     },
     {
+      title: "M.Pharm (Pharmaceutical Chemistry)",
+      duration: "2 Years",
+      intake: "15 Seats",
+      fees: "₹2,00,000/year",
+      description: "Master's program specializing in Pharmaceutical Chemistry with advanced lab work and research.",
+      icon: <Microscope />,
+    },
+    {
       title: "Ph.D.",
       duration: "3-5 Years",
       intake: "Research Based",
@@ -918,6 +926,34 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Recognition badges right after Welcome to RPCP */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
+            >
+              <motion.img
+                src="https://www.charusat.ac.in/rpcp/images/nirf.png"
+                alt="NIRF Ranking - AIR 90"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+              />
+              <motion.img
+                src="https://www.charusat.ac.in/rpcp/images/gsirf.png"
+                alt="GSIRF Rating - Government of Gujarat"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -1024,8 +1060,8 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {programs.slice(0, 2).map((program, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -1055,6 +1091,11 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+          <div className="mt-10 flex justify-center">
+            <Link href="/programs" className="text-amber-600 hover:text-amber-700 font-semibold underline underline-offset-4">
+              Click to view all programs
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -1069,7 +1110,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              By the Numbers
+             RPCP SCALARS
             </h2>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
               Our achievements reflect our unwavering commitment to excellence in pharmaceutical education and research.

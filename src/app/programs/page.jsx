@@ -903,6 +903,15 @@ const BROCHURE_URL = "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8
         description: "A specialization focused on the study of drug action, safety, and efficacy, with extensive research training.",
     },
     {
+        title: "M.Pharm (Pharmaceutical Chemistry)",
+        subtitle: "Master of Pharmacy",
+        level: "Postgraduate",
+        duration: "2 Years",
+        intake: "15 Seats",
+        fees: "₹ 2,00,000",
+        description: "Medicinal chemistry focused program covering drug design, organic synthesis, and analytical characterization.",
+    },
+    {
         title: "M.Pharm (Quality Assurance)",
         subtitle: "Master of Pharmacy",
         level: "Postgraduate",

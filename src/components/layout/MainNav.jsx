@@ -343,19 +343,14 @@ const navStructure = {
 };
 
 // Reusable component for dropdown items to keep the code DRY
-const ListItem = ({ href, label, description }) => (
+const ListItem = ({ href, label }) => (
   <li>
     <NavigationMenuLink asChild>
       <Link
         href={href}
-        className="group flex flex-col select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100"
+        className="block select-none rounded-md p-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-amber-600 focus:bg-slate-100"
       >
-        <div className="text-sm font-semibold text-slate-800 group-hover:text-amber-600 transition-colors">
-          {label}
-        </div>
-        <p className="text-xs text-slate-500 line-clamp-2">
-          {description}
-        </p>
+        {label}
       </Link>
     </NavigationMenuLink>
   </li>
@@ -417,7 +412,7 @@ export function MainNav() {
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <ul className="grid w-[480px] gap-2 p-4 md:w-[520px] md:grid-cols-2 bg-white rounded-xl shadow-lg border border-slate-200/70">
+                          <ul className="grid w-[320px] gap-1.5 p-2 md:w-[360px] md:grid-cols-1 bg-white rounded-lg shadow-lg border border-slate-200/70">
                             {item.items.map((subItem) => (
                               <ListItem key={subItem.label} {...subItem} />
                             ))}
@@ -461,12 +456,10 @@ export function MainNav() {
                     ) : (
                       <Link
                         href={item.href}
-                        // ✅ CORRECT: The 'group' class is here on the individual link.
-                        className={`group relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${linkColor} ${hoverColor} ${pathname === item.href ? activeLinkColor : ''}`}
+                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${linkColor} ${hoverColor} ${pathname === item.href ? activeLinkColor : ''}
+                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${isScrolled ? 'after:bg-amber-500' : 'after:bg-amber-400'}`}
                       >
                         {item.label}
-                        {/* This span will now only react to its direct parent link being hovered. */}
-                        <span className={`absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] w-0 group-hover:w-1/3 transition-all duration-300 ${isScrolled ? 'bg-amber-500' : 'bg-amber-400'}`}></span>
                       </Link>
                     )}
                   </NavigationMenuItem>
