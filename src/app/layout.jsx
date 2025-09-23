@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { MainNav } from "@/components/layout/MainNav";
 import { Footer } from "@/components/layout/Footer";
+import MajorRecruiters from "@/components/shared/MajorRecruiters";
 import { motion, AnimatePresence } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
             {children}
           </motion.main>
         </AnimatePresence>
+        <MajorRecruiters />
         <Footer />
       </body>
     </html>

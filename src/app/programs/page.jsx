@@ -979,17 +979,14 @@ const ProgramCard = ({ program, index }) => {
                       </div>
                     </div>
 
-      {/* Footer Actions */}
-      <div className="bg-slate-50 p-4 flex gap-3">
-        <Button className="flex-grow bg-slate-800 hover:bg-slate-900 transition-transform hover:scale-105">
-          <FileText className="h-4 w-4 mr-2" /> Apply Now
-                            </Button>
-        <a href={BROCHURE_URL} target="_blank" rel="noopener noreferrer" className="flex-grow">
-          <Button variant="outline" className="w-full bg-white border-slate-300 hover:border-slate-400 transition-transform hover:scale-105">
+      {/* Footer Action */}
+      <div className="bg-slate-50 p-4">
+        <a href={BROCHURE_URL} target="_blank" rel="noopener noreferrer" className="block">
+          <Button variant="outline" className="w-full bg-white border-slate-300 hover:border-slate-400 h-12 transition-transform hover:scale-105">
             <Download className="h-4 w-4 mr-2" /> Brochure
           </Button>
         </a>
-                          </div>
+      </div>
               </motion.div>
   );
 };
