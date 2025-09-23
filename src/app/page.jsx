@@ -742,7 +742,6 @@ import {
   MapPin,
   Target, // Using Target for Mission
   Eye, // Using Eye for Vision
-  Download, // For brochure download
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -898,16 +897,13 @@ export default function HomePage() {
             <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-3 text-left">
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). RPCP was established in the year 2004 with a view to promote excellence in Pharmacy Education and to prepare young talent to meet the challenges of Industrial Pharmacy and Pharmacy Practice.
+                  Ramanbhai Patel College of Pharmacy (RPCP), a constituent Institute of CHARUSAT, was established in 2004 to promote excellence in pharmacy education and prepare young talent to meet the challenges of the modern pharmaceutical industry and clinical practice.
                 </p>
                 <div className="mt-6 p-6 bg-white rounded-lg border-l-4 border-amber-500 shadow-sm">
                   <p className="text-slate-700 italic">
-                    "The Institute has the patronage of Zydus Cadila Health Care Ltd; patronized by Shri Pankaj Patel, CMD, Zydus Cadila Healthcare Ltd to commemorate his father, Late Shri Ramanbhai Patel. A Visionary Entrepreneur and a Philanthropist."
+                    "The Institute has the patronage of Zydus Lifesciences Ltd. to commemorate its founder, the visionary entrepreneur and philanthropist, Late Shri Ramanbhai Patel."
                   </p>
                 </div>
-                <p className="text-lg text-slate-600 leading-relaxed mt-6">
-                  M.Pharm Programs at RPCP are executed under the auspices of T. P. Patel Centre for PG studies in Pharmacy. The centre in patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and their families to monumentalize their father, Late Shri T. P. Patel.
-                </p>
               </div>
               <div className="lg:col-span-2 space-y-8">
                 <div className="flex items-start space-x-4">
@@ -957,41 +953,6 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
               />
-            </motion.div>
-
-            {/* Get Brochure Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="mt-8 flex justify-center"
-            >
-              <motion.a
-                href="https://drive.google.com/file/d/1a5SzzBQhlj833cGEmdJrmr-JlthL4t8E/view?usp=share_link"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Button content */}
-                <div className="relative flex items-center space-x-3">
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                  >
-                    <Download className="h-5 w-5" />
-                  </motion.div>
-                  <span className="text-lg">Get Brochure</span>
-                </div>
-                
-                {/* Shine effect */}
-                <div className="absolute inset-0 -top-2 -left-2 w-0 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:w-full transition-all duration-700 transform -skew-x-12"></div>
-              </motion.a>
             </motion.div>
           </motion.div>
         </div>
@@ -1176,6 +1137,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">
+                Contact Us
+              </h2>
+              <h3 className="text-4xl font-bold text-slate-900 mb-4">
+                Get In Touch
+              </h3>
+              <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+                Ready to start your journey? Contact us for more information about our programs and the admission process. We're here to help.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { icon: <Phone />, title: "Phone", value: "+91 7052 101 786" },
+                  { icon: <Mail />, title: "Email", value: "info@rpcp.charusat.ac.in" },
+                  { icon: <MapPin />, title: "Address", value: "CHARUSAT Campus, Changa, Anand, Gujarat" },
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="bg-slate-100 p-3 rounded-lg text-slate-700">{item.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-slate-800">{item.title}</h4>
+                      <p className="text-slate-600">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  Send Us a Message
+                </h3>
+                <form className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                  />
+                  <textarea
+                    placeholder="Your Message"
+                    rows="4"
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                  ></textarea>
+                  <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 text-base">
+                    Send Message
+                  </Button>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

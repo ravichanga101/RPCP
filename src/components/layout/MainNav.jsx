@@ -129,46 +129,35 @@ const navStructure = {
   ],
 };
 
-// Reusable component for dropdown items
-const ListItem = ({ href, label, description, icon, featured = false }) => (
+// Compact Facilities dropdown
+const ListItem = ({ href, label, icon, featured = false }) => (
   <li>
     <NavigationMenuLink asChild>
       <Link
         href={href}
-        className={`flex items-start gap-4 select-none rounded-lg p-3 transition-colors duration-200 ${
-          featured
-            ? "bg-amber-50/70 hover:bg-amber-100/60"
-            : "hover:bg-slate-100/70"
+        className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${
+          featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
         }`}
       >
-        <div
-          className={`flex-shrink-0 mt-0.5 h-8 w-8 rounded-md flex items-center justify-center ${
-            featured ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-600"
-          }`}
-        >
+        <div className={`h-6 w-6 rounded-md flex items-center justify-center ${
+          featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
+        }`}>
           {icon}
         </div>
-        <div className="flex-1">
-          <div className="text-sm font-semibold leading-none text-slate-800">
-            {label}
-          </div>
-          <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-            {description}
-          </p>
-        </div>
+        <span className="text-sm font-medium text-slate-800">{label}</span>
       </Link>
     </NavigationMenuLink>
   </li>
 );
 
-// Reusable component for smaller dropdown items (Student's Corner)
+// Compact Student's Corner dropdown
 const SmallListItem = ({ href, label, icon }) => (
   <NavigationMenuLink asChild>
     <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 select-none rounded-md p-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-amber-600 focus:bg-slate-100"
+      className="flex items-center gap-2 select-none rounded-md p-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
     >
       <span className="text-slate-500">{icon}</span>
       {label}
@@ -232,19 +221,23 @@ export function MainNav() {
                     {item.items ? (
                       <>
                         <NavigationMenuTrigger
-                          className={`text-sm font-medium transition-colors duration-300 bg-transparent ${linkColor} ${hoverColor} focus:bg-transparent data-[state=open]:bg-black/5 px-4 py-2 rounded-full`}
+                          className={`text-sm font-medium transition-colors duration-300 bg-transparent focus:bg-transparent data-[state=open]:bg-black/5 px-4 py-2 rounded-full ${
+                            isScrolled
+                              ? "!text-black hover:!text-gray-800"
+                              : "!text-white hover:!text-gray-200"
+                          }`}
                         >
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           {item.label === "Facilities" ? (
-                            <ul className="grid w-[320px] gap-3 p-4 bg-white rounded-xl shadow-lg border border-slate-200/70">
+                            <ul className="w-[240px] p-3 bg-white rounded-xl shadow-lg border border-slate-200">
                               {item.items.map((subItem) => (
                                 <ListItem key={subItem.label} {...subItem} />
                               ))}
                             </ul>
                           ) : (
-                            <ul className="grid w-[480px] gap-2 p-3 md:w-[520px] md:grid-cols-2 bg-white rounded-xl shadow-lg border border-slate-200/70">
+                            <ul className="w-[400px] p-3 grid grid-cols-2 gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
                               {item.items.map((subItem) => (
                                 <li key={subItem.label}>
                                   <SmallListItem {...subItem} />
@@ -257,9 +250,11 @@ export function MainNav() {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${linkColor} ${hoverColor} ${
-                          pathname === item.href ? activeLinkColor : ""
-                        }
+                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
+                          isScrolled
+                            ? "text-slate-700 hover:text-slate-900"
+                            : "text-slate-100 hover:text-white"
+                        } ${pathname === item.href ? activeLinkColor : ""}
                         after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${
                           isScrolled
                             ? "after:bg-amber-500"
@@ -281,7 +276,11 @@ export function MainNav() {
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`px-2 ${linkColor} ${hoverColor} hover:bg-black/10`}
+                  className={`px-2 hover:bg-black/10 ${
+                    isScrolled
+                      ? "text-slate-700 hover:text-slate-900"
+                      : "text-slate-100 hover:text-white"
+                  }`}
                 >
                   <span className="sr-only">Open menu</span>
                   <Menu className="h-6 w-6" />
