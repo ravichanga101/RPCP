@@ -1176,19 +1176,23 @@ function FacultyCard({ member }) {
 // Simplified Card for Supporting Staff
 function StaffCard({ member }) {
   return (
-    <div className="flex flex-col items-center text-center bg-white rounded-lg shadow-md border border-gray-200/80 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div className="relative w-32 h-32 mb-4">
+    <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-200/80 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      {/* Image Container - Same as Faculty */}
+      <div className="relative w-full" style={{ paddingTop: "100%" }}>
         <Image
           src={member.imageUrl}
           alt={`Photo of ${member.name}`}
           fill
-          className="rounded-full object-cover"
+          className="object-cover object-top"
         />
       </div>
-      <h3 className="text-lg font-bold text-[#202A44]">{member.name}</h3>
-      {member.rank && (
-        <p className="text-[#FBCB0A] font-semibold text-sm">{member.rank}</p>
-      )}
+
+      <div className="flex flex-col flex-grow p-5 text-center">
+        <h3 className="text-lg font-bold text-[#202A44]">{member.name}</h3>
+        {member.rank && (
+          <p className="text-[#FBCB0A] font-semibold text-sm mt-1">{member.rank}</p>
+        )}
+      </div>
     </div>
   );
 }

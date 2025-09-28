@@ -186,7 +186,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; // Added for the logo
 import { 
   Facebook, 
   Instagram, 
@@ -194,30 +193,29 @@ import {
   Phone,
   Mail,
   MapPin,
-  ArrowUp
+  ArrowUp,
+  GraduationCap
 } from "lucide-react";
 
-// Social Links Array for easier mapping
 const socialLinks = [
-  { href: "https://www.facebook.com/RamanbhaiPatelCollegeOfPharmacy/", icon: Facebook, label: "Facebook" },
-  { href: "https://www.linkedin.com/in/rpcp-charusat-changa-5a71941ab/", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://www.instagram.com/rpcp_charusat/", icon: Instagram, label: "Instagram" },
+  { href: "https://www.facebook.com/RamanbhaiPatelCollegeOfPharmacy/", icon: Facebook, label: "Facebook", color: "hover:bg-blue-600" },
+  { href: "https://www.linkedin.com/in/rpcp-charusat-changa-5a71941ab/", icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-700" },
+  { href: "https://www.instagram.com/rpcp_charusat/", icon: Instagram, label: "Instagram", color: "hover:bg-pink-600" },
 ];
 
-// Quick Links Array
 const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about-us", label: "About Us" },
-    { href: "/programs", label: "Programs" },
-    { href: "/admissions", label: "Admissions" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/programs", label: "Programs" },
+  { href: "/contact", label: "Contact" },
 ];
 
-const studentLinks = [
-    { href: "/placement", label: "Placement" },
-    { href: "/research", label: "Research" },
-    { href: "/faculty", label: "Faculty" },
-    { href: "/facilities", label: "Facilities" },
-]
+const academicLinks = [
+  { href: "/placement", label: "Placement" },
+  { href: "/research", label: "Research" },
+  { href: "/faculty", label: "Faculty" },
+  { href: "/facilities/labs", label: "Facilities" },
+];
 
 export function Footer() {
   const scrollToTop = () => {
@@ -225,38 +223,63 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#202A44] text-gray-300">
-      <div className="container mx-auto px-4 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#202A44] text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FBCB0A]/5 via-transparent to-blue-500/5"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FBCB0A]/30 to-transparent"></div>
+      </div>
 
-          {/* Column 1: About & Socials */}
-          <div className="md:col-span-2 lg:col-span-1">
-             <p className="text-gray-400 leading-relaxed mb-6">
-                A premier institute for pharmaceutical education, established in 2004 under CHARUSAT, committed to shaping the future of the pharma industry.
-             </p>
-             <div className="flex space-x-3">
-                {socialLinks.map((link) => (
-                    <a 
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={link.label}
-                        className="w-10 h-10 bg-white/10 hover:bg-[#FBCB0A] hover:text-[#202A44] text-white rounded-full flex items-center justify-center transition-all duration-300"
-                    >
-                        <link.icon className="h-5 w-5" />
-                    </a>
-                ))}
-             </div>
+      <div className="container mx-auto px-6 pt-16 pb-8 relative">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-3 mb-6">
+              <img
+                src="/images/rpcplogo.png"
+                alt="RPCP Logo"
+                className="h-12 w-auto"
+              />
+              <div>
+                <h3 className="text-xl font-bold text-[#FBCB0A]">RPCP</h3>
+                <p className="text-xs text-gray-300">College of Pharmacy</p>
+              </div>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              A premier institute for pharmaceutical education, established in 2004 under CHARUSAT, committed to excellence in pharmacy education and research.
+            </p>
+            <div className="flex space-x-3">
+              {socialLinks.map((link) => (
+                <a 
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className={`w-10 h-10 bg-white/10 ${link.color} text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                >
+                  <link.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+            <h4 className="text-lg font-semibold text-white mb-6 relative">
+              Quick Links
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#FBCB0A]"></div>
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:text-[#FBCB0A] transition-colors duration-200">
+                  <Link 
+                    href={link.href} 
+                    className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 text-sm flex items-center group"
+                  >
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#FBCB0A] transition-colors"></span>
                     {link.label}
                   </Link>
                 </li>
@@ -264,69 +287,106 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Student Corner */}
-           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Student Corner</h3>
-            <ul className="space-y-3">
-               {studentLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="hover:text-[#FBCB0A] transition-colors duration-200">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Contact Info */}
+          {/* Academic Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Contact Us</h3>
-            <ul className="space-y-5">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-[#FBCB0A] mt-1 flex-shrink-0" />
-                <a href="https://maps.app.goo.gl/P2Kq4pSgVbV4qGqf8" target="_blank" rel="noopener noreferrer" className="hover:text-[#FBCB0A] transition-colors duration-200">
+            <h4 className="text-lg font-semibold text-white mb-6 relative">
+              Academics
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#FBCB0A]"></div>
+            </h4>
+            <ul className="space-y-3">
+              {academicLinks.map((link) => (
+                <li key={link.label}>
+                  <Link 
+                    href={link.href} 
+                    className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 text-sm flex items-center group"
+                  >
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#FBCB0A] transition-colors"></span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6 relative">
+              Contact Us
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#FBCB0A]"></div>
+            </h4>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-[#FBCB0A]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="h-4 w-4 text-[#FBCB0A]" />
+                </div>
+                <a 
+                  href="https://maps.app.goo.gl/P2Kq4pSgVbV4qGqf8" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 text-sm"
+                >
                   Off. Nadiad-Petlad Highway, Changa-388421, Anand, Gujarat, India
                 </a>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-[#FBCB0A] mt-1 flex-shrink-0" />
-                <a href="mailto:principal.rpcp@charusat.ac.in" className="hover:text-[#FBCB0A] transition-colors duration-200">
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-[#FBCB0A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="h-4 w-4 text-[#FBCB0A]" />
+                </div>
+                <a 
+                  href="mailto:principal.rpcp@charusat.ac.in" 
+                  className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 text-sm"
+                >
                   principal.rpcp@charusat.ac.in
                 </a>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-[#FBCB0A] mt-1 flex-shrink-0" />
-                <div>
-                    <a href="tel:+912697265151" className="hover:text-[#FBCB0A] transition-colors duration-200 block">
-                        +91 2697 265151 (Office)
-                    </a>
-                    <a href="tel:+917567523103" className="hover:text-[#FBCB0A] transition-colors duration-200 block mt-1">
-                        +91 7567523103 (Admissions)
-                    </a>
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-[#FBCB0A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="h-4 w-4 text-[#FBCB0A]" />
                 </div>
-              </li>
-            </ul>
+                <div className="text-sm">
+                  <a 
+                    href="tel:+912697265151" 
+                    className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 block"
+                  >
+                    +91 2697 265151 (Office)
+                  </a>
+                  <a 
+                    href="tel:+917567523103" 
+                    className="text-gray-300 hover:text-[#FBCB0A] transition-colors duration-200 block mt-1"
+                  >
+                    +91 7567523103 (Admissions)
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
-      </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-white/10 py-6">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} RPCP-
-            <Link href="https://www.charusat.ac.in/" target="_blank" rel="noopener noreferrer" className="text-[#FBCB0A] hover:underline">
-              CHARUSAT
-            </Link> | All rights reserved
-          </p>
-          <div className="flex items-center space-x-6 text-sm text-gray-400">
-            <Link href="/privacy" className="hover:text-[#FBCB0A] transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/sitemap" className="hover:text-[#FBCB0A] transition-colors">
-              Sitemap
-            </Link>
+        {/* Bottom Section */}
+        <div className="border-t border-white/10 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} RPCP - 
+              <Link 
+                href="https://www.charusat.ac.in/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-[#FBCB0A] hover:underline font-medium"
+              >
+                CHARUSAT
+              </Link>
+              . All rights reserved.
+            </p>
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <Link href="/privacy" className="hover:text-[#FBCB0A] transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/sitemap" className="hover:text-[#FBCB0A] transition-colors">
+                Sitemap
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -334,10 +394,10 @@ export function Footer() {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 bg-[#FBCB0A] hover:bg-yellow-400 text-[#202A44] p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+        className="fixed bottom-6 right-6 bg-[#FBCB0A] hover:bg-yellow-400 text-[#202A44] p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50 group"
         aria-label="Scroll to top"
       >
-        <ArrowUp className="h-6 w-6" />
+        <ArrowUp className="h-5 w-5 group-hover:-translate-y-0.5 transition-transform" />
       </button>
     </footer>
   );

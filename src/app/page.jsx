@@ -91,7 +91,7 @@
 //       <section id="hero" className="relative text-white overflow-hidden h-[70vh] min-h-[400px] sm:h-[80vh] sm:min-h-[500px] lg:h-screen lg:min-h-[600px]">
 //         {/* Image Carousel Background */}
 //         <div className="absolute inset-0 z-0">
-//           <ImageCarousel 
+//           <ImageCarousel
 //             images={carouselImages}
 //             autoPlayInterval={3000}
 //           />
@@ -183,14 +183,14 @@
 //               <GraduationCap className="h-8 w-8" />
 //               <span className="text-sm font-medium uppercase tracking-wider">About Our College</span>
 //             </div>
-            
+
 //             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
 //               Welcome To <span className="text-blue-600">RPCP</span>
 //             </h2>
-            
+
 //             {/* Decorative Line */}
 //             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-12 rounded-full"></div>
-            
+
 //             <div className="max-w-5xl mx-auto">
 //               {/* Main Content Card */}
 //               <motion.div
@@ -210,7 +210,7 @@
 //                       <h3 className="text-xl font-bold text-gray-900 mb-2">Established 2004</h3>
 //                       <p className="text-gray-600 text-sm">Constituent Institute of CHARUSAT</p>
 //                     </div>
-                    
+
 //                     <div className="text-center lg:text-left">
 //                       <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto lg:mx-0 mb-4">
 //                         <Award className="h-8 w-8 text-green-600" />
@@ -219,26 +219,26 @@
 //                       <p className="text-gray-600 text-sm">Zydus Cadila Health Care Ltd</p>
 //                     </div>
 //                   </div>
-                  
+
 //                   {/* Center - Main Description */}
 //                   <div className="lg:col-span-2">
 //                     <p className="text-lg text-gray-700 leading-relaxed">
 //                       Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). RPCP was established in the year 2004 with a view to promote excellence in Pharmacy Education and to prepare young talent to meet the challenges of Industrial Pharmacy and Pharmacy Practice.
 //                     </p>
-                    
+
 //                     <div className="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600">
 //                       <p className="text-gray-700 italic">
 //                         "The Institute has the patronage of Zydus Cadila Health Care Ltd; patronized by Shri Pankaj Patel, CMD, Zydus Cadila Healthcare Ltd to commemorate his father, Late Shri Ramanbhai Patel. A Visionary Entrepreneur and a Philanthropist."
 //                       </p>
 //                     </div>
-                    
+
 //                     <p className="text-lg text-gray-700 leading-relaxed mt-6">
 //                       M.Pharm Programs at RPCP are executed under the auspices of T. P. Patel Centre for PG studies in Pharmacy. The centre in patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and their families to monumentalize their father, Late Shri T. P. Patel.
 //                     </p>
 //                   </div>
 //                 </div>
 //               </motion.div>
-              
+
 //               {/* Awards and Recognition Section */}
 //               <motion.div
 //                 initial={{ opacity: 0, y: 20 }}
@@ -248,7 +248,7 @@
 //                 className="text-center"
 //               >
 //                 <h3 className="text-2xl font-bold text-gray-900 mb-8">Recognition & Achievements</h3>
-                
+
 //                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
 //                   <motion.div
 //                     initial={{ opacity: 0, x: -30 }}
@@ -267,7 +267,7 @@
 //                       <p className="text-sm text-gray-600 mt-4 font-medium">NIRF Ranking</p>
 //                     </div>
 //                   </motion.div>
-                  
+
 //                   <motion.div
 //                     initial={{ opacity: 0, x: 30 }}
 //                     whileInView={{ opacity: 1, x: 0 }}
@@ -307,11 +307,11 @@
 //               <Award className="h-8 w-8" />
 //               <span className="text-sm font-medium uppercase tracking-wider">Our Foundation</span>
 //             </div>
-            
+
 //             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
 //               Vision & <span className="text-blue-600">Mission</span>
 //             </h2>
-            
+
 //             {/* Decorative Line */}
 //             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-12 rounded-full"></div>
 //           </motion.div>
@@ -330,18 +330,18 @@
 //                   {/* Decorative Background Element */}
 //                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/20 rounded-full -translate-y-16 translate-x-16"></div>
 //                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200/20 rounded-full translate-y-12 -translate-x-12"></div>
-                  
+
 //                   <div className="relative z-10">
 //                     {/* Vision Icon */}
 //                     <div className="bg-blue-600 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 //                       <Globe className="h-8 w-8 text-white" />
 //                     </div>
-                    
+
 //                     {/* Vision Title */}
 //                     <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
 //                       Our <span className="text-blue-600">Vision</span>
 //                     </h3>
-                    
+
 //                     {/* Vision Statement */}
 //                     <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
 //                       <p className="text-lg text-gray-700 leading-relaxed font-medium">
@@ -364,18 +364,18 @@
 //                   {/* Decorative Background Element */}
 //                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/20 rounded-full -translate-y-16 translate-x-16"></div>
 //                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-200/20 rounded-full translate-y-12 -translate-x-12"></div>
-                  
+
 //                   <div className="relative z-10">
 //                     {/* Mission Icon */}
 //                     <div className="bg-green-600 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 //                       <BookOpen className="h-8 w-8 text-white" />
 //                     </div>
-                    
+
 //                     {/* Mission Title */}
 //                     <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
 //                       Our <span className="text-green-600">Mission</span>
 //                     </h3>
-                    
+
 //                     {/* Mission Statement */}
 //                     <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
 //                       <p className="text-lg text-gray-700 leading-relaxed font-medium">
@@ -722,7 +722,6 @@
 //   );
 // }
 
-
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -788,7 +787,8 @@ export default function HomePage() {
       duration: "4 Years",
       intake: "100 Seats",
       fees: "₹1,55,000/year",
-      description: "Comprehensive pharmacy education with hands-on training and industry exposure.",
+      description:
+        "Comprehensive pharmacy education with hands-on training and industry exposure.",
       icon: <GraduationCap />,
     },
     {
@@ -796,7 +796,8 @@ export default function HomePage() {
       duration: "2 Years",
       intake: "15 Seats each",
       fees: "₹2,00,000/year",
-      description: "Specialized programs in Pharmaceutical Technology, Pharmacology, and Quality Assurance.",
+      description:
+        "Specialized programs in Pharmaceutical Technology, Pharmacology, and Quality Assurance.",
       icon: <Microscope />,
     },
     {
@@ -804,7 +805,8 @@ export default function HomePage() {
       duration: "2 Years",
       intake: "15 Seats",
       fees: "₹2,00,000/year",
-      description: "Master's program specializing in Pharmaceutical Chemistry with advanced lab work and research.",
+      description:
+        "Master's program specializing in Pharmaceutical Chemistry with advanced lab work and research.",
       icon: <Microscope />,
     },
     {
@@ -812,7 +814,8 @@ export default function HomePage() {
       duration: "3-5 Years",
       intake: "Research Based",
       fees: "As per University norms",
-      description: "Advanced research programs in pharmaceutical sciences and drug development.",
+      description:
+        "Advanced research programs in pharmaceutical sciences and drug development.",
       icon: <BookOpen />,
     },
   ];
@@ -820,9 +823,12 @@ export default function HomePage() {
   return (
     <div className="bg-white text-slate-800">
       {/* Hero Section */}
-      <section id="hero" className="relative text-white h-[80vh] min-h-[500px] lg:h-screen lg:min-h-[700px] flex items-center">
-        {/* Darkening Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/40 to-transparent z-10" />
+      <section
+        id="hero"
+        className="relative text-white h-[80vh] min-h-[500px] lg:h-screen lg:min-h-[700px] flex items-center"
+      >
+        {/* Light Overlay for better text readability while keeping images bright */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-slate-900/20 to-transparent z-10" />
         <div className="absolute inset-0 z-0">
           <ImageCarousel images={carouselImages} autoPlayInterval={4000} />
         </div>
@@ -836,7 +842,9 @@ export default function HomePage() {
               className="flex items-center justify-center lg:justify-start space-x-2 text-amber-300 mb-4"
             >
               <GraduationCap className="h-5 w-5" />
-              <span className="text-sm font-semibold tracking-wider uppercase">Welcome to RPCP</span>
+              <span className="text-sm font-semibold tracking-wider uppercase">
+                Welcome to RPCP
+              </span>
             </motion.div>
 
             <motion.h1
@@ -844,7 +852,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
-              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}
+              style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.6)" }}
             >
               Ramanbhai Patel College of Pharmacy
             </motion.h1>
@@ -870,7 +878,8 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0"
             >
-              A prescription for a promising future in the Pharma Industry through hands-on training and state-of-the-art infrastructure.
+              A prescription for a promising future in the Pharma Industry
+              through hands-on training and state-of-the-art infrastructure.
             </motion.p>
           </div>
         </div>
@@ -893,15 +902,21 @@ export default function HomePage() {
               Welcome To <span className="text-slate-700">RPCP</span>
             </h3>
             <div className="w-20 h-1 bg-amber-500 mx-auto mb-12 rounded-full"></div>
-            
+
             <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-3 text-left">
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  Ramanbhai Patel College of Pharmacy (RPCP), a constituent Institute of CHARUSAT, was established in 2004 to promote excellence in pharmacy education and prepare young talent to meet the challenges of the modern pharmaceutical industry and clinical practice.
+                  Ramanbhai Patel College of Pharmacy (RPCP), a constituent
+                  Institute of CHARUSAT, was established in 2004 to promote
+                  excellence in pharmacy education and prepare young talent to
+                  meet the challenges of the modern pharmaceutical industry and
+                  clinical practice.
                 </p>
                 <div className="mt-6 p-6 bg-white rounded-lg border-l-4 border-amber-500 shadow-sm">
                   <p className="text-slate-700 italic">
-                    "The Institute has the patronage of Zydus Lifesciences Ltd. to commemorate its founder, the visionary entrepreneur and philanthropist, Late Shri Ramanbhai Patel."
+                    "The Institute has the patronage of Zydus Lifesciences Ltd.
+                    to commemorate its founder, the visionary entrepreneur and
+                    philanthropist, Late Shri Ramanbhai Patel."
                   </p>
                 </div>
               </div>
@@ -911,8 +926,12 @@ export default function HomePage() {
                     <Building2 className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800">Established 2004</h4>
-                    <p className="text-slate-600 text-sm">A constituent Institute of CHARUSAT.</p>
+                    <h4 className="font-bold text-slate-800">
+                      Established 2004
+                    </h4>
+                    <p className="text-slate-600 text-sm">
+                      A constituent Institute of CHARUSAT.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -920,8 +939,12 @@ export default function HomePage() {
                     <Award className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800">Industry Patronage</h4>
-                    <p className="text-slate-600 text-sm">Supported by Zydus Lifesciences Ltd.</p>
+                    <h4 className="font-bold text-slate-800">
+                      Industry Patronage
+                    </h4>
+                    <p className="text-slate-600 text-sm">
+                      Supported by Zydus Lifesciences Ltd.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -975,7 +998,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  To become a premier pharma institute by creating world-class pharmacists and researchers.
+                  To become a premier pharma institute by creating world-class
+                  pharmacists and researchers.
                 </p>
               </div>
             </motion.div>
@@ -991,9 +1015,12 @@ export default function HomePage() {
                 <div className="bg-slate-200 text-slate-700 rounded-lg p-3 mb-6">
                   <Target className="h-8 w-8" />
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">Our Mission</h3>
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">
+                  Our Mission
+                </h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  To strive for excellence in pharmaceutical sciences through quality education and research.
+                  To strive for excellence in pharmaceutical sciences through
+                  quality education and research.
                 </p>
               </div>
             </motion.div>
@@ -1002,36 +1029,89 @@ export default function HomePage() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-3">
               Our Core Strengths
             </h2>
-            <h3 className="text-4xl lg:text-5xl font-bold text-slate-900">
-              Pillars of Excellence
+            <h3 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Pillars of <span className="text-amber-600">Excellence</span>
             </h3>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Our commitment to excellence is built on three fundamental pillars
+              that ensure comprehensive pharmaceutical education and holistic
+              student development.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {[
-              { icon: <GraduationCap className="h-8 w-8 text-slate-700" />, title: "Project Based Learning" },
-              { icon: <Microscope className="h-8 w-8 text-slate-700" />, title: "State-of-the-Art Facilities" },
-              { icon: <Users className="h-8 w-8 text-slate-700" />, title: "Holistic Student Development" },
+              {
+                icon: <GraduationCap className="h-12 w-12" />,
+                title: "Project Based Learning",
+                color: "from-blue-500 to-blue-600",
+                borderColor: "border-blue-200",
+                hoverColor: "hover:border-blue-400",
+              },
+              {
+                icon: <Microscope className="h-12 w-12" />,
+                title: "State-of-the-Art Facilities",
+                color: "from-green-500 to-green-600",
+                borderColor: "border-green-200",
+                hoverColor: "hover:border-green-400",
+              },
+              {
+                icon: <Users className="h-12 w-12" />,
+                title: "Holistic Student Development",
+                color: "from-purple-500 to-purple-600",
+                borderColor: "border-purple-200",
+                hoverColor: "hover:border-purple-400",
+              },
             ].map((pillar, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.7, delay: index * 0.2 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="group"
               >
-                <div className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all duration-300 h-full text-center">
-                  <div className="bg-slate-100 group-hover:bg-amber-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
+                <div
+                  className={`relative bg-white p-8 lg:p-10 rounded-2xl border-2 ${pillar.borderColor} ${pillar.hoverColor} hover:shadow-2xl transition-all duration-500 h-full overflow-hidden`}
+                >
+                  {/* Background Pattern */}
+                  <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${pillar.color} rounded-full transform translate-x-16 -translate-y-16`}
+                    ></div>
+                  </div>
+
+                  {/* Icon */}
+                  <div
+                    className={`relative z-10 w-24 h-24 bg-gradient-to-br ${pillar.color} rounded-2xl flex items-center justify-center mx-auto mb-8 text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
+                  >
                     {pillar.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800">
-                    {pillar.title}
-                  </h3>
+
+                  {/* Content */}
+                  <div className="relative z-10 text-center">
+                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors duration-300">
+                      {pillar.title}
+                    </h3>
+                  </div>
+
+                  {/* Hover Effect Overlay */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}
+                  ></div>
                 </div>
               </motion.div>
             ))}
@@ -1056,7 +1136,8 @@ export default function HomePage() {
               Academic Programs
             </h3>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Comprehensive programs designed to prepare students for successful careers in the pharmaceutical industry.
+              Comprehensive programs designed to prepare students for successful
+              careers in the pharmaceutical industry.
             </p>
           </motion.div>
 
@@ -1082,9 +1163,24 @@ export default function HomePage() {
                       {program.description}
                     </p>
                     <div className="space-y-3 pt-6 border-t border-slate-200">
-                      <div className="flex justify-between text-sm text-slate-600"><span className="font-medium text-slate-700">Duration:</span><span>{program.duration}</span></div>
-                      <div className="flex justify-between text-sm text-slate-600"><span className="font-medium text-slate-700">Intake:</span><span>{program.intake}</span></div>
-                      <div className="flex justify-between text-sm text-slate-600"><span className="font-medium text-slate-700">Fees:</span><span>{program.fees}</span></div>
+                      <div className="flex justify-between text-sm text-slate-600">
+                        <span className="font-medium text-slate-700">
+                          Duration:
+                        </span>
+                        <span>{program.duration}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-slate-600">
+                        <span className="font-medium text-slate-700">
+                          Intake:
+                        </span>
+                        <span>{program.intake}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-slate-600">
+                        <span className="font-medium text-slate-700">
+                          Fees:
+                        </span>
+                        <span>{program.fees}</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -1092,120 +1188,130 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <Link href="/programs" className="text-amber-600 hover:text-amber-700 font-semibold underline underline-offset-4">
+            <Link
+              href="/programs"
+              className="text-amber-600 hover:text-amber-700 font-semibold underline underline-offset-4"
+            >
               Click to view all programs
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
+      {/* RPCP SCALARS Section */}
+      <section className="py-16 text-white relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/cspit_images/scalars.png')",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-             RPCP SCALARS
-            </h2>
-            <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-              Our achievements reflect our unwavering commitment to excellence in pharmaceutical education and research.
-            </p>
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-5xl font-bold mb-4 text-white"
+            >
+              RPCP SCALARS
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "80px" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="h-0.5 bg-white mx-auto rounded-full"
+            ></motion.div>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true, amount: 0.5 }}
-                className="text-center bg-slate-800/50 p-6 rounded-lg border border-slate-700"
-              >
-                <div className="text-4xl lg:text-5xl font-bold text-amber-400 mb-2">
-                  {achievement.number}
-                </div>
-                <div className="text-sm text-slate-300">{achievement.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">
-                Contact Us
-              </h2>
-              <h3 className="text-4xl font-bold text-slate-900 mb-4">
-                Get In Touch
-              </h3>
-              <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                Ready to start your journey? Contact us for more information about our programs and the admission process. We're here to help.
-              </p>
-
-              <div className="space-y-6">
-                {[
-                  { icon: <Phone />, title: "Phone", value: "+91 7052 101 786" },
-                  { icon: <Mail />, title: "Email", value: "info@rpcp.charusat.ac.in" },
-                  { icon: <MapPin />, title: "Address", value: "CHARUSAT Campus, Changa, Anand, Gujarat" },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-slate-100 p-3 rounded-lg text-slate-700">{item.icon}</div>
-                    <div>
-                      <h4 className="font-semibold text-slate-800">{item.title}</h4>
-                      <p className="text-slate-600">{item.value}</p>
-                    </div>
+          {/* Statistics Grid - More Compact Layout */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-4 gap-4 mb-8">
+              {achievements.slice(0, 4).map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }}
+                  className="text-center group"
+                >
+                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 12,
+                        delay: index * 0.1 + 0.2,
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
+                        {achievement.number}
+                      </div>
+                      <div className="text-white text-xs lg:text-sm font-medium uppercase tracking-wide">
+                        {achievement.label}
+                      </div>
+                    </motion.div>
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                </motion.div>
+              ))}
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Send Us a Message
-                </h3>
-                <form className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-                  />
-                  <textarea
-                    placeholder="Your Message"
-                    rows="4"
-                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-                  ></textarea>
-                  <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 text-base">
-                    Send Message
-                  </Button>
-                </form>
-              </div>
-            </motion.div>
+            <div className="grid grid-cols-4 gap-4">
+              {achievements.slice(4, 8).map((achievement, index) => (
+                <motion.div
+                  key={index + 4}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: (index + 4) * 0.1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }}
+                  className="text-center group"
+                >
+                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 12,
+                        delay: (index + 4) * 0.1 + 0.2,
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
+                        {achievement.number}
+                      </div>
+                      <div className="text-white text-xs lg:text-sm font-medium uppercase tracking-wide">
+                        {achievement.label}
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

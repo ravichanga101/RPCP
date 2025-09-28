@@ -123,7 +123,7 @@ const navStructure = {
     },
     { href: "/research", label: "Research" },
     { href: "/placement", label: "Placement" },
-    { href: "/faculty", label: "Faculty" },
+    { href: "/faculty", label: "Staff" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
   ],
@@ -135,13 +135,17 @@ const ListItem = ({ href, label, icon, featured = false }) => (
     <NavigationMenuLink asChild>
       <Link
         href={href}
+        target={href.endsWith(".pdf") ? "_blank" : undefined}
+        rel={href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
         className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${
           featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
         }`}
       >
-        <div className={`h-6 w-6 rounded-md flex items-center justify-center ${
-          featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
-        }`}>
+        <div
+          className={`h-6 w-6 rounded-md flex items-center justify-center ${
+            featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
+          }`}
+        >
           {icon}
         </div>
         <span className="text-sm font-medium text-slate-800">{label}</span>

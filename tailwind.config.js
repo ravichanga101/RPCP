@@ -17,7 +17,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#f97316",
+          DEFAULT: "#f59e0b",
           foreground: "#ffffff",
         },
         secondary: {
@@ -25,7 +25,7 @@ module.exports = {
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#f97316",
+          DEFAULT: "#f59e0b",
           foreground: "#ffffff",
         },
       },

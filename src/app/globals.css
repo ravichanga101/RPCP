@@ -14,15 +14,15 @@
   }
   
   .btn-primary {
-    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
   }
   
   .btn-outline {
-    @apply border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
   }
   
   .section-padding {
@@ -54,11 +54,11 @@
   }
   
   .accent-color {
-    @apply text-orange-500;
+    @apply text-amber-500;
   }
   
   .accent-bg {
-    @apply bg-orange-500;
+    @apply bg-amber-500;
   }
 }
 
@@ -111,16 +111,20 @@ html {
 
 /* Focus styles */
 *:focus {
-  outline: 2px solid #f97316;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 
-/* Button focus styles */
-button:focus,
+/* Button focus styles - remove outline for buttons */
+button:focus {
+  outline: none;
+}
+
+/* Keep focus styles for form inputs for accessibility */
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #f97316;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 
