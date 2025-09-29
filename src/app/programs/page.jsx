@@ -185,7 +185,7 @@ export default function ProgramsPage() {
                 <h3 className="text-xl font-bold text-slate-800 mb-2">Admissions & Enquiries</h3>
                 <p className="text-slate-600 mb-4">Contact our team for any questions.</p>
                 <Button asChild variant="ghost" className="text-amber-600 hover:text-amber-700 hover:bg-amber-100">
-                  <a href="mailto:admissions@rpcp.charusat.ac.in">Email Admissions <ArrowRight className="h-4 w-4 ml-2" /></a>
+                  <a href="https://admission.charusat.ac.in/">Click for Admissions <ArrowRight className="h-4 w-4 ml-2" /></a>
               </Button>
             </div>
              <div className="bg-slate-800 text-white p-8 rounded-xl text-center">

@@ -17,6 +17,7 @@ import {
   MapPin,
   Target, // Using Target for Mission
   Eye, // Using Eye for Vision
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -47,14 +48,14 @@ export default function HomePage() {
   ];
 
   const achievements = [
-    { number: "08", label: "Patents Filed" },
+    { number: "8", label: "Patents Filed" },
     { number: "22", label: "Research Labs" },
     { number: "97%", label: "Placement Rate" },
-    { number: "28+", label: "Entrepreneurs" },
-    { number: "07", label: "Industry MoUs" },
+    { number: "28", label: "Entrepreneurs" },
+    { number: "7", label: "Industry MoUs" },
     { number: "53", label: "Books/Chapters" },
     { number: "451", label: "Publications" },
-    { number: "50+", label: "Research Grants" },
+    { number: "50", label: "Research Grants" },
   ];
 
   const programs = [
@@ -252,6 +253,41 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
               />
+            </motion.div>
+
+            {/* Get Brochure Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="mt-12 text-center"
+            >
+              <a
+                href="https://drive.google.com/file/d/1a5SzzBQhlj833cGEmdJrmr-JlthL4t8E/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transform transition-all duration-300 border-2 border-blue-600 hover:border-blue-500"
+              >
+                <FileText className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Get Brochure
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -511,9 +547,9 @@ export default function HomePage() {
             ></motion.div>
           </motion.div>
 
-          {/* Statistics Grid - More Compact Layout */}
+          {/* Statistics Grid - Responsive Layout */}
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
               {achievements.slice(0, 4).map((achievement, index) => (
                 <motion.div
                   key={index}
@@ -527,7 +563,7 @@ export default function HomePage() {
                   }}
                   className="text-center group"
                 >
-                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
+                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -539,10 +575,10 @@ export default function HomePage() {
                       }}
                       viewport={{ once: true }}
                     >
-                      <div className="text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
                         {achievement.number}
                       </div>
-                      <div className="text-white text-xs lg:text-sm font-medium uppercase tracking-wide">
+                      <div className="text-white text-xs md:text-xs lg:text-sm font-medium uppercase tracking-wide leading-tight">
                         {achievement.label}
                       </div>
                     </motion.div>
@@ -551,7 +587,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {achievements.slice(4, 8).map((achievement, index) => (
                 <motion.div
                   key={index + 4}
@@ -565,7 +601,7 @@ export default function HomePage() {
                   }}
                   className="text-center group"
                 >
-                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
+                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/10 hover:bg-black/30 hover:border-white/20 transition-all duration-300">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -577,10 +613,10 @@ export default function HomePage() {
                       }}
                       viewport={{ once: true }}
                     >
-                      <div className="text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-amber-400 mb-1 font-mono">
                         {achievement.number}
                       </div>
-                      <div className="text-white text-xs lg:text-sm font-medium uppercase tracking-wide">
+                      <div className="text-white text-xs md:text-xs lg:text-sm font-medium uppercase tracking-wide leading-tight">
                         {achievement.label}
                       </div>
                     </motion.div>
@@ -589,6 +625,53 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Take a Tour of RPCP Video Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">
+              Virtual Campus Tour
+            </h2>
+            <h3 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Take a Tour of <span className="text-amber-600">RPCP</span>
+            </h3>
+            <div className="w-20 h-1 bg-amber-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Explore our state-of-the-art facilities, modern laboratories, and
+              vibrant campus life through this comprehensive virtual tour of
+              Ramanbhai Patel College of Pharmacy.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-slate-900">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/JVcSuvkcHDA?start=185"
+                  title="Take a Tour of RPCP - Virtual Campus Tour"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

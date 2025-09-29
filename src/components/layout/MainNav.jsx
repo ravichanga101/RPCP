@@ -125,7 +125,7 @@ const navStructure = {
     { href: "/placement", label: "Placement" },
     { href: "/faculty", label: "Staff" },
     { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
+    { href: "#footer", label: "Contact", isScroll: true },
   ],
 };
 
@@ -180,6 +180,13 @@ export function MainNav() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToFooter = () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const navClasses = isScrolled
     ? "bg-white/80 backdrop-blur-lg shadow-sm text-slate-800 border-b border-slate-200/80"
@@ -251,6 +258,22 @@ export function MainNav() {
                           )}
                         </NavigationMenuContent>
                       </>
+                    ) : item.isScroll ? (
+                      <button
+                        onClick={scrollToFooter}
+                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
+                          isScrolled
+                            ? "text-slate-700 hover:text-slate-900"
+                            : "text-slate-100 hover:text-white"
+                        }
+                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${
+                          isScrolled
+                            ? "after:bg-amber-500"
+                            : "after:bg-amber-400"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
                     ) : (
                       <Link
                         href={item.href}
@@ -344,6 +367,16 @@ export function MainNav() {
                               </div>
                             )}
                           </>
+                        ) : item.isScroll ? (
+                          <button
+                            onClick={() => {
+                              scrollToFooter();
+                              setIsOpen(false);
+                            }}
+                            className="block px-3 py-3 text-base font-medium rounded-md transition-colors whitespace-nowrap hover:bg-slate-100 w-full text-left"
+                          >
+                            {item.label}
+                          </button>
                         ) : (
                           <Link
                             href={item.href}
