@@ -84,19 +84,27 @@ const LABS = [
 
 // Custom Icon for Bullet Points
 const CheckIcon = ({ className }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path
+      fillRule="evenodd"
+      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+      clipRule="evenodd"
+    />
   </svg>
 );
 
-
 export default function FacilitiesLabs() {
   const [activeId, setActiveId] = useState(LABS[0].id);
+  const [mobileExpandedId, setMobileExpandedId] = useState(LABS[0].id);
   const activeLab = LABS.find((lab) => lab.id === activeId) ?? LABS[0];
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      
       {/* Hero Section */}
       <section className="bg-[#202A44] text-white pt-24 pb-16">
         <div className="container mx-auto px-6 text-center">
@@ -104,14 +112,16 @@ export default function FacilitiesLabs() {
             State-of-the-Art Facilities
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-300">
-            Explore the world-class laboratories, learning spaces, and infrastructure at RPCP, designed to foster innovation and excellence.
+            Explore the world-class laboratories, learning spaces, and
+            infrastructure at RPCP, designed to foster innovation and
+            excellence.
           </p>
         </div>
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="grid lg:grid-cols-12 lg:gap-12">
-          
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-12 lg:gap-12">
           {/* Sidebar Navigation */}
           <aside className="lg:col-span-4">
             <nav className="space-y-2">
@@ -126,7 +136,13 @@ export default function FacilitiesLabs() {
                         : "text-gray-600 hover:bg-yellow-50/60 hover:text-[#202A44]"
                     }`}
                 >
-                  <span className={`w-1.5 h-8 rounded-full mr-4 transition-colors duration-300 ${activeId === lab.id ? 'bg-[#FBCB0A]' : 'bg-transparent group-hover:bg-[#FBCB0A]/50'}`}></span>
+                  <span
+                    className={`w-1.5 h-8 rounded-full mr-4 transition-colors duration-300 ${
+                      activeId === lab.id
+                        ? "bg-[#FBCB0A]"
+                        : "bg-transparent group-hover:bg-[#FBCB0A]/50"
+                    }`}
+                  ></span>
                   {lab.title}
                 </button>
               ))}
@@ -134,9 +150,9 @@ export default function FacilitiesLabs() {
           </aside>
 
           {/* Main Content Display */}
-          <div className="lg:col-span-8 mt-12 lg:mt-0">
+          <div className="lg:col-span-8">
             <div
-              key={activeLab.id} // Re-triggers animation on change
+              key={activeLab.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden animate-fade-in"
             >
               <div className="relative h-72 w-full">
@@ -144,7 +160,7 @@ export default function FacilitiesLabs() {
                   src={activeLab.image}
                   alt={activeLab.title}
                   fill
-                  className="object-contain" // <-- FIX: Changed from object-cover to object-contain
+                  className="object-contain"
                 />
               </div>
               <div className="p-8">
@@ -152,7 +168,7 @@ export default function FacilitiesLabs() {
                   {activeLab.title}
                 </h2>
                 <div className="w-24 h-1 bg-[#FBCB0A] mt-3 mb-6"></div>
-                
+
                 <p className="text-gray-700 mt-4 leading-relaxed">
                   {activeLab.description}
                 </p>
@@ -171,11 +187,92 @@ export default function FacilitiesLabs() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Layout - Stacked Cards */}
+        <div className="lg:hidden space-y-4">
+          {LABS.map((lab) => {
+            const isActive = mobileExpandedId === lab.id;
+            return (
+              <div
+                key={lab.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden"
+              >
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setMobileExpandedId(isActive ? null : lab.id)}
+                  className={`w-full text-left font-semibold p-4 transition-all duration-300 ease-in-out flex items-center justify-between
+                    ${
+                      isActive
+                        ? "bg-yellow-50 text-[#202A44]"
+                        : "text-gray-600 hover:bg-yellow-50/60 hover:text-[#202A44]"
+                    }`}
+                >
+                  <div className="flex items-center">
+                    <span
+                      className={`w-1.5 h-8 rounded-full mr-4 transition-colors duration-300 ${
+                        isActive ? "bg-[#FBCB0A]" : "bg-gray-300"
+                      }`}
+                    ></span>
+                    {lab.title}
+                  </div>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      isActive ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {/* Mobile Content */}
+                {isActive && (
+                  <div className="border-t border-gray-100 animate-fade-in">
+                    <div className="relative h-64 w-full">
+                      <Image
+                        src={lab.image}
+                        alt={lab.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="w-24 h-1 bg-[#FBCB0A] mb-6"></div>
+
+                      <p className="text-gray-700 leading-relaxed">
+                        {lab.description}
+                      </p>
+
+                      {lab.bullets.length > 0 && (
+                        <ul className="space-y-4 mt-6">
+                          {lab.bullets.map((bullet, i) => (
+                            <li key={i} className="flex items-start">
+                              <CheckIcon className="h-6 w-6 text-[#FBCB0A] flex-shrink-0 mt-0.5" />
+                              <span className="ml-3 text-gray-800">
+                                {bullet}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 }
-
 
 // --- Optional: Add this to your globals.css file for the animation ---
 /*

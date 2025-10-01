@@ -356,8 +356,8 @@ export function MainNav() {
                                   <Link
                                     key={subItem.label}
                                     href={subItem.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    target={subItem.href.startsWith('http') || subItem.href.endsWith('.pdf') ? "_blank" : undefined}
+                                    rel={subItem.href.startsWith('http') || subItem.href.endsWith('.pdf') ? "noopener noreferrer" : undefined}
                                     className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
                                     onClick={() => setIsOpen(false)}
                                   >
