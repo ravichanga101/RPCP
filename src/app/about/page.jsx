@@ -61,13 +61,13 @@ const achievements = [
     icon: <Sparkles className="h-8 w-8" />,
   },
   {
-    number: 1000,
-    label: "Students Enrolled",
+    number: 97,
+    label: "Job Placements (%)",
     icon: <GraduationCap className="h-8 w-8" />,
   },
   {
-    number: 50,
-    label: "Faculty Members",
+    number: 451,
+    label: "Publications",
     icon: <BookUser className="h-8 w-8" />,
   },
 ];
@@ -324,16 +324,6 @@ export default function AboutPage() {
                   label: "Location",
                   value: "Changa, Gujarat",
                 },
-                {
-                  icon: <Users className="h-6 w-6 text-amber-600" />,
-                  label: "Affiliation",
-                  value: "CHARUSAT",
-                },
-                {
-                  icon: <Award className="h-6 w-6 text-amber-600" />,
-                  label: "Recognition",
-                  value: "PCI, NAAC",
-                },
               ].map((fact) => (
                 <motion.div
                   variants={listItemVariants}
@@ -376,7 +366,10 @@ export default function AboutPage() {
               >
                 <div className="text-amber-400 mb-2">{item.icon}</div>
                 <div className="text-4xl font-bold text-amber-400 mb-1">
-                  <AnimatedCounter value={item.number} />+
+                  <AnimatedCounter value={item.number} />
+                  {!item.label.includes("Job Placements") &&
+                    !item.label.includes("Publications") &&
+                    "+"}
                 </div>
                 <div className="text-slate-300 text-sm">{item.label}</div>
               </motion.div>
