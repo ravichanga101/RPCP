@@ -369,6 +369,7 @@ export default function AboutPage() {
                   <AnimatedCounter value={item.number} />
                   {!item.label.includes("Job Placements") &&
                     !item.label.includes("Publications") &&
+                    !item.label.includes("Year Established") &&
                     "+"}
                 </div>
                 <div className="text-slate-300 text-sm">{item.label}</div>
