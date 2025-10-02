@@ -19,6 +19,7 @@ import {
   Download,
   History,
   BookCheck,
+  Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -63,6 +64,12 @@ const navStructure = {
           description: "Advanced pharmaceutical analysis",
           icon: <Microscope className="h-5 w-5" />,
           featured: true,
+        },
+        {
+          href: "/facilities/drug-information-center",
+          label: "Drug Information Center",
+          description: "Accurate drug information & consultation",
+          icon: <Info className="h-5 w-5" />,
         },
       ],
     },
@@ -182,9 +189,9 @@ export function MainNav() {
   }, []);
 
   const scrollToFooter = () => {
-    const footer = document.querySelector('footer');
+    const footer = document.querySelector("footer");
     if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
+      footer.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -356,8 +363,18 @@ export function MainNav() {
                                   <Link
                                     key={subItem.label}
                                     href={subItem.href}
-                                    target={subItem.href.startsWith('http') || subItem.href.endsWith('.pdf') ? "_blank" : undefined}
-                                    rel={subItem.href.startsWith('http') || subItem.href.endsWith('.pdf') ? "noopener noreferrer" : undefined}
+                                    target={
+                                      subItem.href.startsWith("http") ||
+                                      subItem.href.endsWith(".pdf")
+                                        ? "_blank"
+                                        : undefined
+                                    }
+                                    rel={
+                                      subItem.href.startsWith("http") ||
+                                      subItem.href.endsWith(".pdf")
+                                        ? "noopener noreferrer"
+                                        : undefined
+                                    }
                                     className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
                                     onClick={() => setIsOpen(false)}
                                   >
