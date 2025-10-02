@@ -183,19 +183,22 @@ export default function HomePage() {
             <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-3 text-left">
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  Ramanbhai Patel College of Pharmacy (RPCP), a constituent
+                  {/* Ramanbhai Patel College of Pharmacy (RPCP), a constituent
                   Institute of CHARUSAT, was established in 2004 to promote
                   excellence in pharmacy education and prepare young talent to
                   meet the challenges of the modern pharmaceutical industry and
-                  clinical practice.
+                  clinical practice. */}
+                  Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). RPCP was established in the year 2004 with a view to promote excellence in Pharmacy Education and to prepare young talent to meet the challenges of Industrial Pharmacy and Pharmacy Practice.
                 </p>
                 <div className="mt-6 p-6 bg-white rounded-lg border-l-4 border-amber-500 shadow-sm">
                   <p className="text-slate-700 italic">
-                    "The Institute has the patronage of Zydus Lifesciences Ltd.
-                    to commemorate its founder, the visionary entrepreneur and
-                    philanthropist, Late Shri Ramanbhai Patel."
+                    "The Institute has the patronage of Zydus Cadila Health Care Ltd; patronized by Shri Pankaj Patel, CMD, Zydus Cadila Healthcare Ltd to commemorate his father, Late Shri Ramanbhai Patel."
                   </p>
                 </div>
+                <br />
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                    A Visionary Entrepreneur and a Philanthropist. M.Pharm Programs at RPCP are executed under the auspices of T. P. Patel Centre for PG studies in Pharmacy. The centre in patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and their families to monumentalize their father, Late Shri T. P. Patel.
+                 </p>
               </div>
               <div className="lg:col-span-2 space-y-8">
                 <div className="flex items-start space-x-4">

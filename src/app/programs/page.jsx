@@ -3,137 +3,127 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  GraduationCap, 
-  Users, 
-  Clock, 
+import {
+  GraduationCap,
+  Users,
+  Clock,
   IndianRupee,
   ArrowRight,
   FileText,
   Download,
   Phone,
-  Mail
+  Mail,
 } from "lucide-react";
 
 // --- DATA (remains the same) ---
-const BROCHURE_URL = "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO";
-  const programs = [
-    {
-        title: "Bachelor of Pharmacy",
-        subtitle: "B.Pharm",
-        level: "Undergraduate",
-      duration: "4 Years",
-      intake: "100 Seats",
-        fees: "₹ 1,55,000",
-        description: "A comprehensive undergraduate program providing a strong foundation in pharmaceutical sciences, preparing students for various careers.",
-    },
-    {
-        title: "M.Pharm (Pharmaceutical Technology)",
-      subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-      duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "An advanced program focused on the principles of drug formulation, development, and manufacturing.",
-    },
-    {
-        title: "M.Pharm (Pharmacology)",
-        subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-        duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "A specialization focused on the study of drug action, safety, and efficacy, with extensive research training.",
-    },
-    {
-        title: "M.Pharm (Pharmaceutical Chemistry)",
-        subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-        duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "Medicinal chemistry focused program covering drug design, organic synthesis, and analytical characterization.",
-    },
-    {
-        title: "M.Pharm (Quality Assurance)",
-        subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-        duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "A focused curriculum on cGMP, quality management systems, validation, audits, and global regulatory compliance.",
-    },
-     {
-        title: "M.Pharm (Pharmacy Practice)",
-        subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-        duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "Develops expertise in clinical pharmacy services, patient counseling, and evidence-based therapeutic practices.",
-    },
-    {
-        title: "M.Pharm (Regulatory Affairs)",
-        subtitle: "Master of Pharmacy",
-        level: "Postgraduate",
-        duration: "2 Years",
-        intake: "15 Seats",
-        fees: "₹ 2,00,000",
-        description: "Provides in-depth knowledge of drug regulations, dossier preparation, and global regulatory guidelines.",
-    },
+const BROCHURE_URL =
+  "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO";
+const programs = [
+  {
+    title: "Bachelor of Pharmacy",
+    subtitle: "B.Pharm",
+    level: "Undergraduate",
+    duration: "4 Years",
+    intake: "100 Seats",
+    fees: "₹ 1,55,000",
+  },
+  {
+    title: "M.Pharm (Pharmaceutical Technology)",
+    subtitle: "Master of Pharmacy",
+    level: "Postgraduate",
+    duration: "2 Years",
+    intake: "15 Seats",
+    fees: "₹ 2,00,000",
+  },
+  {
+    title: "M.Pharm (Pharmacology)",
+    subtitle: "Master of Pharmacy",
+    level: "Postgraduate",
+    duration: "2 Years",
+    intake: "15 Seats",
+    fees: "₹ 2,00,000",
+  },
+  {
+    title: "M.Pharm (Pharmaceutical Chemistry)",
+    subtitle: "Master of Pharmacy",
+    level: "Postgraduate",
+    duration: "2 Years",
+    intake: "15 Seats",
+    fees: "₹ 2,00,000",
+  },
+  {
+    title: "M.Pharm (Quality Assurance)",
+    subtitle: "Master of Pharmacy",
+    level: "Postgraduate",
+    duration: "2 Years",
+    intake: "15 Seats",
+    fees: "₹ 2,00,000",
+  },
+  {
+    title: "M.Pharm (Pharmacy Practice)",
+    subtitle: "Master of Pharmacy",
+    level: "Postgraduate",
+    duration: "2 Years",
+    intake: "15 Seats",
+    fees: "₹ 2,00,000",
+  },
 ];
 
 const ProgramCard = ({ program, index }) => {
   return (
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+      viewport={{ once: true }}
       className="flex flex-col bg-white rounded-xl shadow-lg border border-slate-200/80 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5"
     >
       {/* Card Header */}
-      <div className="p-6 border-b-4 border-amber-400">
-        <p className="text-sm font-semibold text-amber-600 mb-1">{program.level}</p>
+      <div className="p-6 border-b-4 border-amber-400 flex-grow">
+        <p className="text-sm font-semibold text-amber-600 mb-1">
+          {program.level}
+        </p>
         <h3 className="text-xl font-bold text-slate-900">{program.title}</h3>
-                    </div>
-      
-      {/* Card Body */}
-      <div className="p-6 flex-grow">
-        <p className="text-slate-600">{program.description}</p>
-            </div>
+      </div>
 
       {/* Stats Section */}
-      <div className="px-6 pb-6 grid grid-cols-3 gap-4 text-center">
+      <div className="px-6 pt-6 pb-6 grid grid-cols-3 gap-4 text-center">
         <div>
           <Clock className="mx-auto h-6 w-6 text-slate-400 mb-1" />
           <p className="font-bold text-slate-800">{program.duration}</p>
           <p className="text-xs text-slate-500">Duration</p>
-                      </div>
+        </div>
         <div>
           <Users className="mx-auto h-6 w-6 text-slate-400 mb-1" />
           <p className="font-bold text-slate-800">{program.intake}</p>
           <p className="text-xs text-slate-500">Intake</p>
-                      </div>
-                          <div>
+        </div>
+        <div>
           <IndianRupee className="mx-auto h-6 w-6 text-slate-400 mb-1" />
           <p className="font-bold text-slate-800">{program.fees}</p>
           <p className="text-xs text-slate-500">Fees/Year</p>
-                      </div>
-                    </div>
+        </div>
+      </div>
 
       {/* Footer Action */}
       <div className="bg-slate-50 p-4">
-        <a href={BROCHURE_URL} target="_blank" rel="noopener noreferrer" className="block">
-          <Button variant="outline" className="w-full bg-white border-slate-300 hover:border-slate-400 h-12 transition-transform hover:scale-105">
+        <a
+          href={BROCHURE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <Button
+            variant="outline"
+            className="w-full bg-white border-slate-300 hover:border-slate-400 h-12 transition-transform hover:scale-105"
+          >
             <Download className="h-4 w-4 mr-2" /> Brochure
           </Button>
         </a>
       </div>
-              </motion.div>
+    </motion.div>
   );
 };
-
 
 export default function ProgramsPage() {
   return (
@@ -151,14 +141,15 @@ export default function ProgramsPage() {
             Our Academic Programs
           </motion.h1>
           <motion.p
-                initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 max-w-2xl mx-auto text-lg text-slate-300"
           >
-            Explore our meticulously designed programs to launch and advance your career in pharmaceutical sciences.
+            Explore our meticulously designed programs to launch and advance
+            your career in pharmaceutical sciences.
           </motion.p>
-                  </div>
+        </div>
       </section>
 
       {/* Programs Grid */}
@@ -174,31 +165,56 @@ export default function ProgramsPage() {
       <section className="bg-white border-t border-slate-200">
         <div className="container mx-auto px-4 py-20">
           <div className="text-center mb-12">
-             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Ready for the Next Step?</h2>
-             <p className="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">Our team is ready to assist you with admissions and advanced research opportunities.</p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              Ready for the Next Step?
+            </h2>
+            <p className="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">
+              Our team is ready to assist you with admissions and advanced
+              research opportunities.
+            </p>
+          </div>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="bg-slate-50/80 p-8 rounded-xl border border-slate-200 text-center">
-                <div className="mx-auto bg-amber-100 text-amber-600 h-12 w-12 rounded-full flex items-center justify-center mb-4">
-                  <Phone className="h-6 w-6"/>
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">Admissions & Enquiries</h3>
-                <p className="text-slate-600 mb-4">Contact our team for any questions.</p>
-                <Button asChild variant="ghost" className="text-amber-600 hover:text-amber-700 hover:bg-amber-100">
-                  <a href="https://admission.charusat.ac.in/">Click for Admissions <ArrowRight className="h-4 w-4 ml-2" /></a>
+              <div className="mx-auto bg-amber-100 text-amber-600 h-12 w-12 rounded-full flex items-center justify-center mb-4">
+                <Phone className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">
+                Admissions & Enquiries
+              </h3>
+              <p className="text-slate-600 mb-4">
+                Contact our team for any questions.
+              </p>
+              <Button
+                asChild
+                variant="ghost"
+                className="text-amber-600 hover:text-amber-700 hover:bg-amber-100"
+              >
+                <a href="https://admission.charusat.ac.in/">
+                  Click for Admissions <ArrowRight className="h-4 w-4 ml-2" />
+                </a>
               </Button>
             </div>
-             <div className="bg-slate-800 text-white p-8 rounded-xl text-center">
-                <div className="mx-auto bg-slate-700 text-white h-12 w-12 rounded-full flex items-center justify-center mb-4">
-                  <GraduationCap className="h-6 w-6"/>
-                  </div>
-                <h3 className="text-xl font-bold mb-2">Doctoral (Ph.D.) Program</h3>
-                <p className="text-slate-300 mb-4">Advance your research career with us.</p>
-                <Button asChild variant="secondary" className="bg-white text-slate-800 hover:bg-slate-200 shadow">
-                   <Link href="/research">Explore Ph.D. Research <ArrowRight className="h-4 w-4 ml-2" /></Link>
-                </Button>
-                  </div>
-                </div>
+            <div className="bg-slate-800 text-white p-8 rounded-xl text-center">
+              <div className="mx-auto bg-slate-700 text-white h-12 w-12 rounded-full flex items-center justify-center mb-4">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">
+                Doctoral (Ph.D.) Program
+              </h3>
+              <p className="text-slate-300 mb-4">
+                Advance your research career with us.
+              </p>
+              <Button
+                asChild
+                variant="secondary"
+                className="bg-white text-slate-800 hover:bg-slate-200 shadow"
+              >
+                <Link href="/research">
+                  Explore Ph.D. Research <ArrowRight className="h-4 w-4 ml-2" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
