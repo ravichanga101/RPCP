@@ -354,25 +354,25 @@ export default function AboutPage() {
               and community impact.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {achievements.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true, amount: 0.5 }}
-                className="text-center bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20"
+                viewport={{ once: true, amount: 0.3 }}
+                className="text-center bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg border border-white/20"
               >
                 <div className="text-amber-400 mb-2">{item.icon}</div>
-                <div className="text-4xl font-bold text-amber-400 mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-amber-400 mb-1">
                   <AnimatedCounter value={item.number} />
                   {!item.label.includes("Job Placements") &&
                     !item.label.includes("Publications") &&
                     !item.label.includes("Year Established") &&
                     "+"}
                 </div>
-                <div className="text-slate-300 text-sm">{item.label}</div>
+                <div className="text-slate-300 text-xs md:text-sm leading-tight">{item.label}</div>
               </motion.div>
             ))}
           </div>
