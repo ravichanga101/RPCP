@@ -257,6 +257,26 @@ export function Footer() {
               <li><Link href="/faculty" className="text-gray-300 hover:text-white transition-colors">Faculty</Link></li>
               <li><Link href="/research" className="text-gray-300 hover:text-white transition-colors">Research</Link></li>
               <li><Link href="/placement" className="text-gray-300 hover:text-white transition-colors">Placement</Link></li>
+              <li>
+                <a
+                  href="/new_data/SIF/Standard%20Inspection%20Form_compressed.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Standard Inspection Form
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/files/RPCP_NIRF_2025.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  NIRF 2025
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -269,14 +289,17 @@ export function Footer() {
                 <div>
                   <a href="tel:+912697265151" className="text-gray-300 hover:text-white transition-colors">
                     +91 2697 265151
+                  </a><br/>
+                  <a href="tel:+917567523103" className="text-gray-300 hover:text-white transition-colors">
+                    +91 7567523103 (Admission inquiry)
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="mailto:info@charusat.ac.in" className="text-gray-300 hover:text-white transition-colors block">
-                    info@charusat.ac.in
+                  <a href="mailto:principal.rpcp@charusat.ac.in" className="text-gray-300 hover:text-white transition-colors block">
+                    principal.rpcp@charusat.ac.in
                   </a>
                 </div>
               </div>
