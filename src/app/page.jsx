@@ -48,14 +48,14 @@ export default function HomePage() {
   ];
 
   const achievements = [
-    { number: "8", label: "Patents Filed" },
+    { number: "18", label: "Patents Filed" },
     { number: "22", label: "Research Labs" },
     { number: "97%", label: "Placement Rate" },
     { number: "28", label: "Entrepreneurs" },
     { number: "7", label: "Industry MoUs" },
-    { number: "53", label: "Books/Chapters" },
-    { number: "451", label: "Publications" },
-    { number: "50", label: "Research Grants" },
+    { number: "83+", label: "Books/Chapters" },
+    { number: "633+", label: "Publications" },
+    { number: "50+", label: "Research Grants (in lacs)" },
   ];
 
   const programs = [
@@ -239,7 +239,7 @@ export default function HomePage() {
               className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
             >
               <motion.img
-                src="https://www.charusat.ac.in/rpcp/images/nirf.png"
+                src="/new_data/Logo/NIRF LOGO.png"
                 alt="NIRF Ranking - AIR 90"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -248,7 +248,7 @@ export default function HomePage() {
                 className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
               />
               <motion.img
-                src="https://www.charusat.ac.in/rpcp/images/gsirf.png"
+                src="/new_data/Logo/gsirf.png"
                 alt="GSIRF Rating - Government of Gujarat"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
