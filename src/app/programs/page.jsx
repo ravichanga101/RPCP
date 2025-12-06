@@ -52,14 +52,6 @@ const programs = [
     fees: "₹ 2,00,000",
   },
   {
-    title: "M.Pharm (Pharmacy Practice)",
-    subtitle: "Master of Pharmacy",
-    level: "Postgraduate",
-    duration: "2 Years",
-    intake: "15 Seats",
-    fees: "₹ 2,00,000",
-  },
-  {
     title: "M.Pharm (Regulatory Affairs)",
     subtitle: "Master of Pharmacy",
     level: "Postgraduate",
