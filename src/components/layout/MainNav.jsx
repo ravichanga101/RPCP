@@ -116,13 +116,9 @@ const navStructure = {
           label: "Institute Innovation Council",
           icon: <BookCheck className="h-4 w-4" />,
         },
+        
         {
-          href: "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO",
-          label: "Download",
-          icon: <Download className="h-4 w-4" />,
-        },
-        {
-          href: "https://drive.google.com/drive/u/1/folders/1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW",
+          href: "https://scpit.knimbus.com/portal/v2/custom/questions",
           label: "Old Question Paper",
           icon: <History className="h-4 w-4" />,
         },
