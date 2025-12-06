@@ -40,18 +40,7 @@ const facultyData = [
     phone: "+91 2697 265141",
   },
   // Professors
-  {
-    category: "Academic Staff",
-    rank: "Professor",
-    name: "Dr. Gayatri Patel",
-    title: "Professor",
-    qualification: "Ph. D.",
-    expertise: "Enhancement of Bioavailability of Complex Therapeutics",
-    imageUrl: "/images/faculty_photo/Dr. Gayatri Patel.webp",
-    profileUrl: "https://vidwan.inflibnet.ac.in/profile/161745",
-    email: "gayatripatel.ph@charusat.ac.in",
-    phone: "+91 2697 265162",
-  },
+  
   {
     category: "Academic Staff",
     rank: "Professor",
@@ -168,24 +157,11 @@ const facultyData = [
     email: "umangshah.ph@charusat.ac.in",
     phone: "+91 2697 265148",
   },
-  // Assistant Professors
   {
     category: "Academic Staff",
-    rank: "Assistant Professor",
-    name: "Dr. Rajendra Kotadiya",
-    title: "Assistant Professor",
-    qualification: "Ph. D.",
-    expertise: "Analytical Method Development of Pharmaceuticals",
-    imageUrl: "/images/faculty_photo/Dr. Rajendra Kotadiya.webp",
-    profileUrl: "https://vidwan.inflibnet.ac.in/profile/161379",
-    email: "rajendrakotadiya.ph@charusat.ac.in",
-    phone: "+91 2697 265146",
-  },
-  {
-    category: "Academic Staff",
-    rank: "Assistant Professor",
+    rank: "Associate Professor",
     name: "Dr. Swayamprakash Patel",
-    title: "Assistant Professor",
+    title: "Associate Professor",
     qualification: "Ph. D.",
     expertise:
       "NDDS, Nano-Pharmaceuticals, Artificial Intelligence, Intellectual Property Rights",
@@ -194,6 +170,9 @@ const facultyData = [
     email: "swayamprakashpatel.ph@charusat.ac.in",
     phone: "+91 2697 265148",
   },
+  // Assistant Professors
+  
+  
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
@@ -247,9 +226,9 @@ const facultyData = [
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
-    name: "Mr. Alkesh Patel",
+    name: "Dr. Alkesh Patel",
     title: "Assistant Professor",
-    qualification: "M. Pharm.",
+    qualification: "Ph. D.",
     expertise:
       "Molecular Biology, Preclinical Study, Oncology, Cancer Stem Cells Research, Immunotherapy",
     imageUrl: "/images/faculty_photo/Mr. Alkesh Patel.webp",
@@ -286,9 +265,9 @@ const facultyData = [
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
-    name: "Ms. Richa Dave",
+    name: "Dr. Richa Dave",
     title: "Assistant Professor",
-    qualification: "M. Pharm.",
+    qualification: "Ph. D.",
     expertise:
       "Novel Nanocarrier-Based Drug Delivery, Targeted Delivery, Cancer Research",
     imageUrl: "/images/faculty_photo/richa_dave.webp",
@@ -308,18 +287,7 @@ const facultyData = [
     email: "viralpatel.ph@charusat.ac.in",
     phone: "+91-2697-265148",
   },
-  {
-    category: "Academic Staff",
-    rank: "Assistant Professor",
-    name: "Dr. Archita Patel",
-    title: "Assistant Professor",
-    qualification: "Ph. D.",
-    expertise: "Development and Validation of Analytical Methods Using DOE",
-    imageUrl: "/images/faculty_photo/ap.png",
-    profileUrl: "https://vidwan.inflibnet.ac.in/profile/240032",
-    email: "architapatel.ph@charusat.ac.in",
-    phone: "+91-2697-265149",
-  },
+  
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
@@ -348,9 +316,9 @@ const facultyData = [
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
-    name: "Mr. Keval Y. Raval",
+    name: "Dr. Keval Y. Raval",
     title: "Assistant Professor",
-    qualification: "M. Pharm.",
+    qualification: "Ph. D.",
     expertise:
       "Molecular Docking, Pharmacogenomics, Cancer Research, and Diabetes Research",
     imageUrl: "/images/faculty_photo/KevalRaval.webp",
@@ -408,18 +376,7 @@ const facultyData = [
     email: "arunsoni.ph@charusat.ac.in",
     phone: "+91-2697-265146",
   },
-  {
-    category: "Academic Staff",
-    rank: "Assistant Professor",
-    name: "Dr. Nancy Tripathi",
-    title: "Assistant Professor",
-    qualification: "Ph.D.",
-    expertise: "Computer-aided Drug Design & Development, Cheminformatics",
-    imageUrl: "/images/faculty_photo/Nancy_Tripathi.webp",
-    profileUrl: "https://vidwan.inflibnet.ac.in/profile/513250",
-    email: "nancytripathi.ph@charusat.ac.in",
-    phone: "+91-2697-265138",
-  },
+  
   // Supporting Staff
   {
     category: "Supporting Staff",
@@ -455,6 +412,12 @@ const facultyData = [
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Ms. Hiral Patel",
+    imageUrl: "/images/supporting_staff/Ms. Hiral Patel.webp",
+  },
+  {
+    category: "Supporting Staff",
+    rank: "Store In-charge",
+    name: "Mr. Mukesh Patel",
     imageUrl: "/images/supporting_staff/Ms. Hiral Patel.webp",
   },
   {
