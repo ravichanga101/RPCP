@@ -15,9 +15,7 @@ import {
   Mail,
 } from "lucide-react";
 
-// --- DATA (remains the same) ---
-const BROCHURE_URL =
-  "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO";
+// --- DATA ---
 const programs = [
   {
     title: "Bachelor of Pharmacy",
@@ -26,6 +24,7 @@ const programs = [
     duration: "4 Years",
     intake: "100 Seats",
     fees: "₹ 1,55,000",
+    brochureUrl: "/new_data/Program%20Brochures/B.Pharm%20Program.pdf",
   },
   {
     title: "M.Pharm (Pharmaceutical Technology)",
@@ -34,6 +33,7 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,00,000",
+    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PT.pdf",
   },
   {
     title: "M.Pharm (Pharmacology)",
@@ -42,6 +42,7 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,00,000",
+    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PCOL.pdf",
   },
   {
     title: "M.Pharm (Pharmaceutical Quality Assurance)",
@@ -50,6 +51,7 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,00,000",
+    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20QA.pdf",
   },
   {
     title: "M.Pharm (Regulatory Affairs)",
@@ -58,6 +60,7 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,00,000",
+    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20RA.pdf",
   },
   {
     title: "M.Pharm (Pharmaceutical Chemistry)",
@@ -66,6 +69,7 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,00,000",
+    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PC.pdf",
   },
 ];
 
@@ -108,7 +112,7 @@ const ProgramCard = ({ program, index }) => {
       {/* Footer Action */}
       <div className="bg-slate-50 p-4">
         <a
-          href={BROCHURE_URL}
+          href={program.brochureUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="block"
