@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.charusat.ac.in"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.charusat.ac.in',
+      },
+    ],
   },
 };
 

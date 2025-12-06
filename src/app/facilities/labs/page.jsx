@@ -76,9 +76,18 @@ const LABS = [
     id: "herbal",
     title: "Herbal Garden (Medicinal Plants Garden)",
     description:
-      "Separate Herbal Garden (Medicinal plants Garden) is available behind RPCP building. It is designed to provide knowledge about importance of Herbs and Plants as a medicine in individual’s life. Herbal Garden of RPCP is spread over 2000 sq meter area of land and has collection of around 160 aromatic and medicinal plants. Fresh plant parts are utilized during practical session in Pharmacology Laboratory.",
+      "Separate Herbal Garden (Medicinal plants Garden) is available behind RPCP building. It is designed to provide knowledge about importance of Herbs and Plants as a medicine in individual's life. Herbal Garden of RPCP is spread over 2000 sq meter area of land and has collection of around 160 aromatic and medicinal plants. Fresh plant parts are utilized during practical session in Pharmacology Laboratory.",
     bullets: [],
     image: "https://www.charusat.ac.in/rpcp/images/labs/lab8.png",
+  },
+  {
+    id: "zebrafish",
+    title: "Center for Zebrafish Toxicity Studies",
+    description:
+      "Zebrafish have emerged as a robust and scientifically validated alternative to traditional rodent models in toxicity research. Their high sensitivity to chemical, environmental (including pesticide), and nanoparticle-induced toxicities enables early and reliable detection of adverse effects, thereby substantially reducing study timelines. With approximately 75% genetic homology to humans, zebrafish provide strong translational relevance for predicting human toxicity outcomes. Their rapid embryonic development, external fertilization, and transparent embryos further allow real-time visualization of organogenesis and precise identification of developmental or physiological abnormalities.At Ramanbhai Patel College of Pharmacy, extensive expertise has been established in conducting diverse toxicity assessments using zebrafish models. Key proficiencies include neurotoxicity, genotoxicity, developmental toxicity, cardiotoxicity, as well as molecular mechanism-focused studies involving apoptosis, oxidative stress, and related pathways. These capabilities position the institute as a leading centre for comprehensive, mechanism-driven toxicity evaluation leveraging advanced zebrafish research platforms.",
+    bullets: [],
+    
+    image: "/new_data/RPCP LAB FACILITY/Center_Zebrafish_Toxicity_Studies.jpg",
   },
 ];
 
