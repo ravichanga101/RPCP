@@ -180,7 +180,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Oral and Topical formulations; NDDS; Auto immune disorder formulation development",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/Dr._Jagruti_Desai.png",
+    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/JAGRUTI-DESAI.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163502",
     email: "jagrutidesai.ph@charusat.ac.in",
     phone: "+91 2697 265147",
