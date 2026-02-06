@@ -188,17 +188,30 @@ export default function HomePage() {
                   excellence in pharmacy education and prepare young talent to
                   meet the challenges of the modern pharmaceutical industry and
                   clinical practice. */}
-                  Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of Charotar University of Science and Technology (CHARUSAT). RPCP was established in the year 2004 with a view to promote excellence in Pharmacy Education and to prepare young talent to meet the challenges of Industrial Pharmacy and Pharmacy Practice.
+                  Ramanbhai Patel College of Pharmacy (RPCP) is a constituent
+                  Institute of Charotar University of Science and Technology
+                  (CHARUSAT). RPCP was established in the year 2004 with a view
+                  to promote excellence in Pharmacy Education and to prepare
+                  young talent to meet the challenges of Industrial Pharmacy and
+                  Pharmacy Practice.
                 </p>
                 <div className="mt-6 p-6 bg-white rounded-lg border-l-4 border-amber-500 shadow-sm">
                   <p className="text-slate-700 italic">
-                    "The Institute has the patronage of Zydus Cadila Health Care Ltd; patronized by Shri Pankaj Patel, CMD, Zydus Cadila Healthcare Ltd to commemorate his father, Late Shri Ramanbhai Patel."
+                    "The Institute has the patronage of Zydus Cadila Health Care
+                    Ltd; patronized by Shri Pankaj Patel, CMD, Zydus Cadila
+                    Healthcare Ltd to commemorate his father, Late Shri
+                    Ramanbhai Patel."
                   </p>
                 </div>
                 <br />
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                    A Visionary Entrepreneur and a Philanthropist. M.Pharm Programs at RPCP are executed under the auspices of T. P. Patel Centre for PG studies in Pharmacy. The centre in patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and their families to monumentalize their father, Late Shri T. P. Patel.
-                 </p>
+                  A Visionary Entrepreneur and a Philanthropist. M.Pharm
+                  Programs at RPCP are executed under the auspices of T. P.
+                  Patel Centre for PG studies in Pharmacy. The centre in
+                  patronized by Shri Jagdishbhai Patel and Shri H. T. Patel and
+                  their families to monumentalize their father, Late Shri T. P.
+                  Patel.
+                </p>
               </div>
               <div className="lg:col-span-2 space-y-8">
                 <div className="flex items-start space-x-4">
@@ -238,15 +251,22 @@ export default function HomePage() {
               viewport={{ once: true, amount: 0.4 }}
               className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
             >
-              <motion.img
-                src="/new_data/Logo/NIRF LOGO.png"
-                alt="NIRF Ranking - AIR 90"
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
-              />
+                className="flex flex-col items-center gap-2"
+              >
+                <img
+                  src="/new_data/Logo/NIRF LOGO.png"
+                  alt="NIRF Ranking - AIR 98"
+                  className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+                />
+                <p className="text-sm md:text-base font-semibold text-gray-700 text-center">
+                  Pharmacy Category
+                </p>
+              </motion.div>
               <motion.img
                 src="/new_data/Logo/gsirf.png"
                 alt="GSIRF Rating - Government of Gujarat"
