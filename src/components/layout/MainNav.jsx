@@ -47,29 +47,61 @@ const navStructure = {
       label: "Facilities",
       items: [
         {
-          href: "/facilities/labs",
-          label: "Laboratories",
-          description: "State-of-the-art research facilities",
-          icon: <FlaskConical className="h-5 w-5" />,
+          href: "/facilities/classroom",
+          label: "Classrooms",
+          description: "Modern air-conditioned learning spaces",
+          icon: <BookCopy className="h-5 w-5" />,
         },
         {
-          href: "/facilities/herbal-garden",
-          label: "Herbal Garden",
-          description: "A living library of medicinal plants",
-          icon: <Leaf className="h-5 w-5" />,
-        },
-        {
-          href: "/files/Testing_Facilites_Brochure-RCTF-RPCP.pdf",
-          label: "Testing Facilities",
-          description: "Advanced pharmaceutical analysis",
+          href: "/facilities/computer-lab",
+          label: "Computer Lab",
+          description: "Advanced computational facilities",
           icon: <Microscope className="h-5 w-5" />,
-          featured: true,
         },
         {
-          href: "/facilities/cell-culture-lab",
-          label: "Cell Culture Lab",
-          description: "Advanced cell culture research facility",
+          href: "/facilities/departmental-lab",
+          label: "Departmental Laboratory",
+          description: "Comprehensive lab facilities",
           icon: <FlaskConical className="h-5 w-5" />,
+        },
+        {
+          href: "/facilities/library",
+          label: "Library",
+          description: "Gateway to pharmaceutical knowledge",
+          icon: <BookCheck className="h-5 w-5" />,
+        },
+        {
+          label: "State of Art Facility",
+          description: "World-class research infrastructure",
+          icon: <Star className="h-5 w-5" />,
+          featured: true,
+          subItems: [
+            {
+              href: "/facilities/animal-house",
+              label: "Animal House",
+              icon: <FlaskConical className="h-4 w-4" />,
+            },
+            {
+              href: "/facilities/cell-culture-lab",
+              label: "Cell Culture Lab",
+              icon: <FlaskConical className="h-4 w-4" />,
+            },
+            {
+              href: "/facilities/aseptic-lab",
+              label: "Aseptic Lab",
+              icon: <FlaskConical className="h-4 w-4" />,
+            },
+            {
+              href: "/facilities/zebrafish",
+              label: "Zebrafish",
+              icon: <FlaskConical className="h-4 w-4" />,
+            },
+            {
+              href: "/facilities/herbal-garden",
+              label: "Herbal Garden",
+              icon: <Leaf className="h-4 w-4" />,
+            },
+          ],
         },
       ],
     },
@@ -112,12 +144,6 @@ const navStructure = {
           icon: <Lightbulb className="h-4 w-4" />,
         },
         {
-          href: "/files/IIC.pdf",
-          label: "Institute Innovation Council",
-          icon: <BookCheck className="h-4 w-4" />,
-        },
-        
-        {
           href: "https://scpit.knimbus.com/portal/v2/custom/questions",
           label: "Old Question Paper",
           icon: <History className="h-4 w-4" />,
@@ -133,29 +159,71 @@ const navStructure = {
 };
 
 // Compact Facilities dropdown
-const ListItem = ({ href, label, icon, featured = false }) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <Link
-        href={href}
-        target={href.endsWith(".pdf") ? "_blank" : undefined}
-        rel={href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
-        className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${
-          featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
-        }`}
-      >
-        <div
-          className={`h-6 w-6 rounded-md flex items-center justify-center ${
-            featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
+const ListItem = ({ href, label, icon, featured = false, subItems }) => {
+  if (subItems) {
+    return (
+      <li className="relative">
+        <details className="group">
+          <summary
+            className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 cursor-pointer list-none ${
+              featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
+            }`}
+          >
+            <div
+              className={`h-6 w-6 rounded-md flex items-center justify-center ${
+                featured
+                  ? "bg-amber-500 text-white"
+                  : "bg-blue-100 text-blue-600"
+              }`}
+            >
+              {icon}
+            </div>
+            <span className="text-sm font-medium text-slate-800 flex-1">
+              {label}
+            </span>
+            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="pl-6 mt-1 space-y-1">
+            {subItems.map((subItem) => (
+              <Link
+                key={subItem.label}
+                href={subItem.href}
+                className="flex items-center gap-2 rounded-md p-2 text-sm text-slate-600 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+              >
+                {subItem.icon}
+                <span>{subItem.label}</span>
+              </Link>
+            ))}
+          </div>
+        </details>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href}
+          target={href.endsWith(".pdf") ? "_blank" : undefined}
+          rel={href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
+          className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${
+            featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
           }`}
         >
-          {icon}
-        </div>
-        <span className="text-sm font-medium text-slate-800">{label}</span>
-      </Link>
-    </NavigationMenuLink>
-  </li>
-);
+          <div
+            className={`h-6 w-6 rounded-md flex items-center justify-center ${
+              featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
+            }`}
+          >
+            {icon}
+          </div>
+          <span className="text-sm font-medium text-slate-800">{label}</span>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+};
 
 // Compact Student's Corner dropdown
 const SmallListItem = ({ href, label, icon }) => (
@@ -208,7 +276,10 @@ export function MainNav() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link
+            href="/"
+            className="flex items-center group focus:outline-none focus-visible:outline-none"
+          >
             <div className="flex items-center space-x-3">
               <img
                 src="/images/rpcplogo.png"
@@ -245,7 +316,7 @@ export function MainNav() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           {item.label === "Facilities" ? (
-                            <ul className="w-[240px] p-3 bg-white rounded-xl shadow-lg border border-slate-200">
+                            <ul className="w-[320px] p-3 bg-white rounded-xl shadow-lg border border-slate-200 max-h-[500px] overflow-y-auto">
                               {item.items.map((subItem) => (
                                 <ListItem key={subItem.label} {...subItem} />
                               ))}
@@ -340,7 +411,9 @@ export function MainNav() {
                               className="w-full flex items-center justify-between px-3 py-3 text-base font-medium hover:bg-slate-100 rounded-md transition-colors"
                               onClick={() =>
                                 setOpenSection(
-                                  openSection === item.label ? null : item.label
+                                  openSection === item.label
+                                    ? null
+                                    : item.label,
                                 )
                               }
                             >
@@ -356,26 +429,52 @@ export function MainNav() {
                             {openSection === item.label && (
                               <div className="pl-4 pt-1 pb-2 border-l-2 border-amber-200 ml-4">
                                 {item.items.map((subItem) => (
-                                  <Link
-                                    key={subItem.label}
-                                    href={subItem.href}
-                                    target={
-                                      subItem.href.startsWith("http") ||
-                                      subItem.href.endsWith(".pdf")
-                                        ? "_blank"
-                                        : undefined
-                                    }
-                                    rel={
-                                      subItem.href.startsWith("http") ||
-                                      subItem.href.endsWith(".pdf")
-                                        ? "noopener noreferrer"
-                                        : undefined
-                                    }
-                                    className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
-                                    onClick={() => setIsOpen(false)}
-                                  >
-                                    {subItem.label}
-                                  </Link>
+                                  <div key={subItem.label}>
+                                    {subItem.subItems ? (
+                                      // Nested item with sub-items
+                                      <details className="group mb-1">
+                                        <summary className="flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-700 hover:text-amber-600 hover:bg-amber-500/10 rounded-md cursor-pointer list-none">
+                                          <span>{subItem.label}</span>
+                                          <ChevronDown className="h-3 w-3 transition-transform group-open:rotate-180" />
+                                        </summary>
+                                        <div className="pl-4 pt-1 space-y-1">
+                                          {subItem.subItems.map(
+                                            (nestedItem) => (
+                                              <Link
+                                                key={nestedItem.label}
+                                                href={nestedItem.href}
+                                                className="block px-3 py-2 text-xs text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
+                                                onClick={() => setIsOpen(false)}
+                                              >
+                                                {nestedItem.label}
+                                              </Link>
+                                            ),
+                                          )}
+                                        </div>
+                                      </details>
+                                    ) : (
+                                      // Regular item
+                                      <Link
+                                        href={subItem.href}
+                                        target={
+                                          subItem.href.startsWith("http") ||
+                                          subItem.href.endsWith(".pdf")
+                                            ? "_blank"
+                                            : undefined
+                                        }
+                                        rel={
+                                          subItem.href.startsWith("http") ||
+                                          subItem.href.endsWith(".pdf")
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                        }
+                                        className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
+                                        onClick={() => setIsOpen(false)}
+                                      >
+                                        {subItem.label}
+                                      </Link>
+                                    )}
+                                  </div>
                                 ))}
                               </div>
                             )}
