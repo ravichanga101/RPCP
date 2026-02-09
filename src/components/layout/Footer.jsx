@@ -201,7 +201,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* College Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
@@ -216,8 +216,9 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Ramanbhai Patel College of Pharmacy (RPCP) is a constituent Institute of CHARUSAT, 
-              established in 2004 to promote excellence in pharmaceutical education and research.
+              Ramanbhai Patel College of Pharmacy (RPCP) is a constituent
+              Institute of CHARUSAT, established in 2004 to promote excellence
+              in pharmaceutical education and research.
             </p>
             <div className="flex space-x-4">
               <a
@@ -251,12 +252,54 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/programs" className="text-gray-300 hover:text-white transition-colors">Programs</Link></li>
-              <li><Link href="/faculty" className="text-gray-300 hover:text-white transition-colors">Faculty</Link></li>
-              <li><Link href="/research" className="text-gray-300 hover:text-white transition-colors">Research</Link></li>
-              <li><Link href="/placement" className="text-gray-300 hover:text-white transition-colors">Placement</Link></li>
+              <li>
+                <Link
+                  href="/"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Programs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faculty"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Faculty
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/research"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/placement"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Placement
+                </Link>
+              </li>
               <li>
                 <a
                   href="/new_data/SIF/Standard%20Inspection%20Form_compressed.pdf"
@@ -280,6 +323,26 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* IQAC */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">IQAC</h4>
+            <ul className="space-y-2">
+              <li>
+                <span className="text-gray-300">SFP</span>
+              </li>
+              <li>
+                <a
+                  href="/files/innovative_idea_box.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  IIB
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
@@ -287,10 +350,17 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="tel:+912697265151" className="text-gray-300 hover:text-white transition-colors">
+                  <a
+                    href="tel:+912697265151"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
                     +91 2697 265151
-                  </a><br/>
-                  <a href="tel:+917567523103" className="text-gray-300 hover:text-white transition-colors">
+                  </a>
+                  <br />
+                  <a
+                    href="tel:+917567523103"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
                     +91 7567523103 (Admission inquiry)
                   </a>
                 </div>
@@ -298,7 +368,10 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="mailto:principal.rpcp@charusat.ac.in" className="text-gray-300 hover:text-white transition-colors block">
+                  <a
+                    href="mailto:principal.rpcp@charusat.ac.in"
+                    className="text-gray-300 hover:text-white transition-colors block"
+                  >
                     principal.rpcp@charusat.ac.in
                   </a>
                 </div>
@@ -319,7 +392,7 @@ export function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} RPCP - 
+              © {new Date().getFullYear()} RPCP -
               <Link
                 href="https://www.charusat.ac.in/"
                 target="_blank"
@@ -331,13 +404,28 @@ export function Footer() {
               . All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="https://charusat.edu.in:912/Uniexamresult/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://charusat.edu.in:912/Uniexamresult/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 Results
               </a>
-              <a href="https://admission.charusat.ac.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://admission.charusat.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 Admissions
               </a>
-              <a href="https://charusat.edu.in:912/OthPaymentApp/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://charusat.edu.in:912/OthPaymentApp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 Transcript
               </a>
             </div>
