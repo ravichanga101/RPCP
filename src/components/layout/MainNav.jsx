@@ -139,11 +139,6 @@ const navStructure = {
           icon: <Star className="h-4 w-4" />,
         },
         {
-          href: "/files/innovative_idea_box.pdf",
-          label: "Innovative Idea Box",
-          icon: <Lightbulb className="h-4 w-4" />,
-        },
-        {
           href: "https://scpit.knimbus.com/portal/v2/custom/questions",
           label: "Old Question Paper",
           icon: <History className="h-4 w-4" />,

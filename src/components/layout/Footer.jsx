@@ -328,9 +328,6 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">IQAC</h4>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-300">SFP</span>
-              </li>
-              <li>
                 <a
                   href="/files/innovative_idea_box.pdf"
                   target="_blank"

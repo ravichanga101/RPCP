@@ -376,6 +376,21 @@ const facultyData = [
     email: "arunsoni.ph@charusat.ac.in",
     phone: "+91-2697-265146",
   },
+  {
+    category: "Academic Staff",
+    rank: "Assistant Professor",
+    name: "Ms. Ripal Desai",
+    imageUrl: "/faculty_image/Ms._Ripal_Desai_Assiastant_Professor.png",
+    title: "Assistant Professor",
+  },
+  {
+    category: "Academic Staff",
+    rank: "Assistant Professor",
+    name: "Ms. Shreya Shah",
+    imageUrl: "/faculty_image/Ms._Shreya_Shah_Assiastant_Professor.png",
+    title: "Assistant Professor",
+  },
+  
   
   // Supporting Staff
   {
