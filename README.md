@@ -1,5 +1,5 @@
 # RPCP College of Pharmacy Website
-
+ 
 A modern, responsive website for Ramanbhai Patel College of Pharmacy (RPCP), CHARUSAT - a premier institute for pharmaceutical education in India.
 
 ## 🏫 About RPCP
