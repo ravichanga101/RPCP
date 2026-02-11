@@ -431,6 +431,12 @@ const facultyData = [
   },
   {
     category: "Supporting Staff",
+    rank: "Laboratory Technician",
+    name: "Mr. Manish Nandpal",
+    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/Mr.Manish_Nandpal_Lab Technician.png",
+  },
+  {
+    category: "Supporting Staff",
     rank: "Store In-charge",
     name: "Mr. Mukesh Patel",
     imageUrl: "/new_data/Staff photos/Non-Teaching Staff/Mukeshbhai Patel.png",
