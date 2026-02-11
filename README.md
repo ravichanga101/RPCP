@@ -160,4 +160,4 @@ This project is proprietary to Ramanbhai Patel College of Pharmacy, CHARUSAT.
 
 ---
 
-**Ramanbhai Patel College of Pharmacy** - Where Excellence Meets Innovation in Pharmaceutical Education
+**Ramanbhai Patel College of Pharmacy** - Where Excellence Meets Innovation in Pharmaceutical Education 
