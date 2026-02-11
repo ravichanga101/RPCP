@@ -180,7 +180,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Oral and Topical formulations; NDDS; Auto immune disorder formulation development",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/JAGRUTI-DESAI.png",
+    imageUrl: "/faculty_image/JAGRUTI-DESAI.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163502",
     email: "jagrutidesai.ph@charusat.ac.in",
     phone: "+91 2697 265147",
@@ -193,7 +193,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Nano formulations; Solubility enhancement of hydrophobic drugs; Novel polymer based drug delivery systems",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/ADILKUMAR-SANATKUMAR-PATEL.png",
+    imageUrl: "/faculty_image/ADILKUMAR-SANATKUMAR-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162167",
     email: "adilpatel.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -205,7 +205,7 @@ const facultyData = [
     title: "Assistant Professor",
     qualification: "M. Pharm.",
     expertise: "Cardiovascular Research, Preclinical Studies",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/HARDIK-MUKESHKUMAR-KORIA.png",
+    imageUrl: "/faculty_image/HARDIK-MUKESHKUMAR-KORIA.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163409",
     email: "hardikkoria.ph@charusat.ac.in",
     phone: "+91 2697 265155",
@@ -217,7 +217,7 @@ const facultyData = [
     title: "Assistant Professor",
     qualification: "Ph. D.",
     expertise: "Drug Analysis, Stability Study",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/PAYALBEN-PURUSHOTTAMBHAI-CHAUHAN.png",
+    imageUrl: "/faculty_image/PAYALBEN-PURUSHOTTAMBHAI-CHAUHAN.png",
     profileUrl: "https://vidwan.inflibnet.ac.in//profile/162327",
     email: "payalchauhan.ph@charusat.ac.in",
     phone: "+91 2697 265147",
@@ -230,7 +230,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Molecular Biology, Preclinical Study, Oncology, Cancer Stem Cells Research, Immunotherapy",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/ALKESHKUMAR-KIRITBHAI-PATEL.png",
+    imageUrl: "/faculty_image/ALKESHKUMAR-KIRITBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163503",
     email: "alkeshpatel.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -243,7 +243,7 @@ const facultyData = [
     qualification: "M. Pharm.",
     expertise:
       "Computer-Aided Drug Design; Advanced Organic Synthesis; Impurity Profiling and Characterization",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/Mr._Nikunj_Parekh-.png",
+    imageUrl: "/faculty_image/Mr._Nikunj_Parekh-.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162185",
     email: "nikunjparekh.ph@charusat.ac.in", // Email added
     phone: "+91 2697 265148", // Phone added
@@ -256,7 +256,7 @@ const facultyData = [
     qualification: "Ph.D.",
     expertise:
       "Reproductive Toxicology; Environmental Endocrine Disruptors; Steroidogenic & Immuno-Inflammatory Therapeutics",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/MILAPKUMAR-RAJESHBHAI-PATEL.png",
+    imageUrl: "/faculty_image/MILAPKUMAR-RAJESHBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163404",
     email: "milappatel.ph@charusat.ac.in",
     phone: "+91 2697 265138",
@@ -269,7 +269,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Novel Nanocarrier-Based Drug Delivery, Targeted Delivery, Cancer Research",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/RICHA-RAKESH-DAVE.png",
+    imageUrl: "/faculty_image/RICHA-RAKESH-DAVE.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/161698",
     email: "richadave.ph@charusat.ac.in",
     phone: "+91 2697 265153",
@@ -281,7 +281,7 @@ const facultyData = [
     title: "Assistant Professor",
     qualification: "Ph. D.",
     expertise: "Formulation Development; Novel Drug Delivery Systems",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/VIRAL-ARVINDBHAI-PATEL.png",
+    imageUrl: "/faculty_image/VIRAL-ARVINDBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/253908",
     email: "viralpatel.ph@charusat.ac.in",
     phone: "+91-2697-265148",
@@ -295,7 +295,7 @@ const facultyData = [
     qualification: "Ph.D.",
     expertise:
       "Network Pharmacology; Immune-Inflammatory Pathway Interrogation; Experimental Animal Model Expertise",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/Ms._Bhagyabhumi_Shah.png",
+    imageUrl: "/faculty_image/Ms._Bhagyabhumi_Shah.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/239739",
     email: "bhagyabhumishah.ph@charusat.ac.in",
     phone: "+91-2697-265148",
@@ -308,7 +308,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Synthesis and Chemical Modification of Organic and Natural Products-Inspired Scaffolds; Route Scouting and In-silico studies",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/NITIN-AMARSHIBHAI-LUNAGARIYA.png",
+    imageUrl: "/faculty_image/NITIN-AMARSHIBHAI-LUNAGARIYA.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/253926",
     email: "nitinlunagariya.ph@charusat.ac.in",
     phone: "+91-2697-265148",
@@ -321,7 +321,7 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Molecular Docking, Pharmacogenomics, Cancer Research, and Diabetes Research",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant Professor/KEVAL-YOGESHBHAI-RAVAL.png",
+    imageUrl: "/faculty_image/KEVAL-YOGESHBHAI-RAVAL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/412604",
     email: "kevalraval.ph@charusat.ac.in",
     phone: "+91-2697-265153",
