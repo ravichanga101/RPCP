@@ -23,7 +23,7 @@ const programs = [
     level: "Undergraduate",
     duration: "4 Years",
     intake: "100 Seats",
-    fees: "₹ 1,55,000",
+    fees: "₹ 1,80,000",
     brochureUrl: "/new_data/Program%20Brochures/B.Pharm%20Program.pdf",
   },
   {
@@ -32,7 +32,7 @@ const programs = [
     level: "Postgraduate",
     duration: "2 Years",
     intake: "15 Seats",
-    fees: "₹ 2,00,000",
+    fees: "₹ 2,20,000",
     brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PT.pdf",
   },
   {
@@ -41,7 +41,7 @@ const programs = [
     level: "Postgraduate",
     duration: "2 Years",
     intake: "15 Seats",
-    fees: "₹ 2,00,000",
+    fees: "₹ 2,20,000",
     brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PCOL.pdf",
   },
   {
@@ -50,7 +50,7 @@ const programs = [
     level: "Postgraduate",
     duration: "2 Years",
     intake: "15 Seats",
-    fees: "₹ 2,00,000",
+    fees: "₹ 2,20,000",
     brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20QA.pdf",
   },
   {
@@ -59,7 +59,7 @@ const programs = [
     level: "Postgraduate",
     duration: "2 Years",
     intake: "15 Seats",
-    fees: "₹ 2,00,000",
+    fees: "₹ 2,20,000",
     brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20RA.pdf",
   },
   {
@@ -68,7 +68,7 @@ const programs = [
     level: "Postgraduate",
     duration: "2 Years",
     intake: "15 Seats",
-    fees: "₹ 2,00,000",
+    fees: "₹ 2,20,000",
     brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PC.pdf",
   },
 ];
@@ -104,7 +104,7 @@ const ProgramCard = ({ program, index }) => {
         </div>
         <div>
           <IndianRupee className="mx-auto h-6 w-6 text-slate-400 mb-1" />
-          <p className="font-bold text-slate-800">{program.fees}</p>
+          <p className="font-bold text-slate-800">{program.fees}*</p>
           <p className="text-xs text-slate-500">Fees/Year</p>
         </div>
       </div>
@@ -163,6 +163,9 @@ export default function ProgramsPage() {
             <ProgramCard key={program.title} program={program} index={index} />
           ))}
         </div>
+        <p className="mt-6 text-sm text-slate-600 text-center md:text-right">
+          * Fees approval is subject to Appellate Committee.
+        </p>
       </section>
 
       {/* Final CTA */}
