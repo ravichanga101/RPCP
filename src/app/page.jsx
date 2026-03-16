@@ -63,28 +63,31 @@ export default function HomePage() {
       title: "B.Pharm",
       duration: "4 Years",
       intake: "100 Seats",
-      fees: "₹1,55,000/year",
+      fees: "₹1,80,000/year*",
       description:
         "Comprehensive pharmacy education with hands-on training and industry exposure.",
       icon: <GraduationCap />,
+      Note:"* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "M.Pharm",
       duration: "2 Years",
       intake: "15 Seats each",
-      fees: "₹2,00,000/year",
+      fees: "₹2,20,000/year*",
       description:
         "Specialized programs in Pharmaceutical Technology, Pharmacology, and Quality Assurance.",
       icon: <Microscope />,
+      Note:"* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "M.Pharm (Pharmaceutical Chemistry)",
       duration: "2 Years",
       intake: "15 Seats",
-      fees: "₹2,00,000/year",
+      fees: "₹2,20,000/year*",
       description:
         "Master's program specializing in Pharmaceutical Chemistry with advanced lab work and research.",
       icon: <Microscope />,
+      Note:"* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "Ph.D.",
@@ -515,6 +518,10 @@ export default function HomePage() {
                           Fees:
                         </span>
                         <span>{program.fees}</span>
+                      </div>
+                      <div className="flex justify-right text-sm text-slate-600">
+                        
+                        <span>{program.Note}</span>
                       </div>
                     </div>
                   </CardContent>
