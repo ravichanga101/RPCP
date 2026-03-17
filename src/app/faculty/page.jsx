@@ -41,7 +41,7 @@ const facultyData = [
     phone: "+91 2697 265141",
   },
   // Professors
-  
+
   {
     category: "Academic Staff",
     rank: "Professor",
@@ -50,7 +50,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Nano- and lipid-based drug delivery systems; Development of novel and site-specific therapeutic formulations; Pharmaceutical quality assurance",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Professor/MRUNALI-RASHMIN-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Professor/MRUNALI-RASHMIN-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/161545",
     email: "mrunalipatel.ph@charusat.ac.in",
     phone: "+91 2697 265146",
@@ -63,7 +64,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Pharmaceutical Quality Assurance; Nanocarrier Based Drug Delivery Systems; AQbD based Analytical Method Development/Validation",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Professor/RASHMIN-BHARATBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Professor/RASHMIN-BHARATBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/161527",
     email: "rashminpatel.ph@charusat.ac.in",
     phone: "+91 2697 265167",
@@ -76,7 +78,8 @@ const facultyData = [
     title: "Associate Professor",
     qualification: "Ph. D.",
     expertise: "Novel Drug Delivery Systems, Dissolution Enhancement",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/AMIT-AMBALAL-PATEL-.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/AMIT-AMBALAL-PATEL-.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/161377",
     email: "amitpatel.ph@charusat.ac.in",
     phone: "+91 2697 265153",
@@ -89,7 +92,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Clinical Research & Pharmacovigilance; Pharmacoepidemiology & Clinical Practice; Pharmacy Practice & Rational Drug Therapy",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/JALPA-VASHISHTHKUMAR-SUTHAR.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/JALPA-VASHISHTHKUMAR-SUTHAR.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/161381",
     email: "jalpasuthar.ph@charusat.ac.in",
     phone: "+91 2697 265155",
@@ -102,7 +106,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Nano Carriers Based Drug Delivery Systems, Dissolution and Bioavailability Enhancement",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/RAVISH-JANAKBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/RAVISH-JANAKBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163489",
     email: "ravishpatel.ph@charusat.ac.in",
     phone: "+91 2697 265153",
@@ -115,7 +120,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Neurodegenerative & Cancer Research Expertise; Drug Repurposing & Mechanistic Pathway Targeting; Integrated In-vitro, In-vivo, In-silico & Network Pharmacology Skills",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/NILAY-DHIRENKUMAR-SOLANKI.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/NILAY-DHIRENKUMAR-SOLANKI.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163485",
     email: "nilaysolanki.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -127,7 +133,8 @@ const facultyData = [
     title: "Associate Professor",
     qualification: "Ph. D.",
     expertise: "Isolation of Phytoconstituents And Its Biological Evaluation",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/KANANKUMARI-GAMANLAL-GAMIT.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/KANANKUMARI-GAMANLAL-GAMIT.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162269",
     email: "kanangamit.ph@charusat.ac.in",
     phone: "+91 2697 265156",
@@ -140,7 +147,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Analytical Method Development, Small Molecules Synthesis and Computation Drug Design",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/MEHUL-MANUBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/MEHUL-MANUBHAI-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162196",
     email: "mehulpatel.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -153,7 +161,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Drug Design and Synthesis, Cytotoxicity Assay, Computational Study",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/UMANG-HARISHCHANDRA-SHAH.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/UMANG-HARISHCHANDRA-SHAH.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162057",
     email: "umangshah.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -166,7 +175,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "NDDS, Nano-Pharmaceuticals, Artificial Intelligence, Intellectual Property Rights",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Associate Professor/SWAYAMPRAKASH-KANTILAL-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Associate Professor/SWAYAMPRAKASH-KANTILAL-PATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/162142",
     email: "swayamprakashpatel.ph@charusat.ac.in",
     phone: "+91 2697 265148",
@@ -180,7 +190,8 @@ const facultyData = [
     qualification: "Ph. D.",
     expertise:
       "Oral and Topical formulations; NDDS; Auto immune disorder formulation development",
-    imageUrl: "/faculty_image/JAGRUTI-DESAI.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/Dr.-Jagruti-Desai.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/163502",
     email: "jagrutidesai.ph@charusat.ac.in",
     phone: "+91 2697 265147",
@@ -286,7 +297,7 @@ const facultyData = [
     email: "viralpatel.ph@charusat.ac.in",
     phone: "+91-2697-265148",
   },
-  
+
   {
     category: "Academic Staff",
     rank: "Assistant Professor",
@@ -295,7 +306,8 @@ const facultyData = [
     qualification: "Ph.D.",
     expertise:
       "Network Pharmacology; Immune-Inflammatory Pathway Interrogation; Experimental Animal Model Expertise",
-    imageUrl: "/faculty_image/Ms._Bhagyabhumi_Shah.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/Dr.-Bhagyabhumi-Shah.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/239739",
     email: "bhagyabhumishah.ph@charusat.ac.in",
     phone: "+91-2697-265148",
@@ -332,8 +344,10 @@ const facultyData = [
     name: "Dr. Purvi A. Shah",
     title: "Assistant Professor",
     qualification: "Ph.D.",
-    expertise: "Natural Products Chemistry; Network Pharmacology; Molecular Docking",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant professor/PURVI-AJAYKUMAR-SHAH.png",
+    expertise:
+      "Natural Products Chemistry; Network Pharmacology; Molecular Docking",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/PURVI-AJAYKUMAR-SHAH.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/274304",
     email: "purvishah.ph@charusat.ac.in",
     phone: "+91-2697-265138",
@@ -346,7 +360,8 @@ const facultyData = [
     qualification: "M. Pharm.",
     expertise:
       "Regulatory Affairs of Pharmaceuticals and PhytoPharmaceuticals, Formulation and Development, Alternate Medicine, IPR",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant professor/SHACHIBEN-SANNI-KAPATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/SHACHIBEN-SANNI-KAPATEL.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/463910",
     email: "shachikapatel.ph@charusat.ac.in",
     phone: "+91-2697-265138",
@@ -358,7 +373,8 @@ const facultyData = [
     title: "Assistant Professor",
     qualification: "Ph.D.",
     expertise: "Tissue Engineering and Regenerative Medicine",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant professor/SWATI-SHIVDAYAL-SHARMA.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/SWATI-SHIVDAYAL-SHARMA.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/401959",
     email: "swatisharma.ph@charusat.ac.in",
     phone: "+91-2697-265138",
@@ -371,7 +387,8 @@ const facultyData = [
     qualification: "Ph.D.",
     expertise:
       "Cardio-metabolic, Neuro-Endocrine and Female reproductive disease; OECD guideline based Toxicity studies",
-    imageUrl: "/new_data/Staff photos/Teaching Staff/Assistant professor/ARUN-KIRITBHAI-SONI.png",
+    imageUrl:
+      "/new_data/Staff photos/Teaching Staff/Assistant professor/ARUN-KIRITBHAI-SONI.png",
     profileUrl: "https://vidwan.inflibnet.ac.in/profile/210822",
     email: "arunsoni.ph@charusat.ac.in",
     phone: "+91-2697-265146",
@@ -390,26 +407,28 @@ const facultyData = [
     imageUrl: "/faculty_image/Ms._Shreya_Shah_Assiastant_Professor.png",
     title: "Assistant Professor",
   },
-  
-  
+
   // Supporting Staff
   {
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Mr. Jalpesh Patel",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/JALPESHKUMAR-HARSHADBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/JALPESHKUMAR-HARSHADBHAI-PATEL.png",
   },
   {
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Mr. Minal Patel",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/MINAL-ARVINDBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/MINAL-ARVINDBHAI-PATEL.png",
   },
   {
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Mr. Jignesh Patel",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/JIGNESHKUMAR-AMBALAL-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/JIGNESHKUMAR-AMBALAL-PATEL.png",
   },
   {
     category: "Supporting Staff",
@@ -421,19 +440,22 @@ const facultyData = [
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Mr. Chintan Patel",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/CHINTANKUMAR-ASHOKBHAI-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/CHINTANKUMAR-ASHOKBHAI-PATEL.png",
   },
   {
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Ms. Hiral Patel",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/HIRALBAHEN-AKASH-PATEL.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/HIRALBAHEN-AKASH-PATEL.png",
   },
   {
     category: "Supporting Staff",
     rank: "Laboratory Technician",
     name: "Mr. Manish Nandpal",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/Mr.Manish_Nandpal_Lab Technician.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/Mr.Manish_Nandpal_Lab Technician.png",
   },
   {
     category: "Supporting Staff",
@@ -453,7 +475,8 @@ const facultyData = [
     category: "Supporting Staff",
     rank: "Office Executive",
     name: "Mr. Jaydeep Parmar",
-    imageUrl: "/new_data/Staff photos/Non-Teaching Staff/JAYDEEPKUMAR-KIRITBHAI-PARMAR.png",
+    imageUrl:
+      "/new_data/Staff photos/Non-Teaching Staff/JAYDEEPKUMAR-KIRITBHAI-PARMAR.png",
   },
   {
     category: "Supporting Staff",
@@ -559,7 +582,9 @@ function StaffCard({ member }) {
       <div className="flex flex-col flex-grow p-5 text-center">
         <h3 className="text-lg font-bold text-[#202A44]">{member.name}</h3>
         {member.rank && (
-          <p className="text-[#FBCB0A] font-semibold text-sm mt-1">{member.rank}</p>
+          <p className="text-[#FBCB0A] font-semibold text-sm mt-1">
+            {member.rank}
+          </p>
         )}
       </div>
     </div>
@@ -591,10 +616,10 @@ function SectionHeader({ title, icon }) {
 export default function FacultyPage() {
   const leadership = facultyData.filter((m) => m.category === "Leadership");
   const academicStaff = facultyData.filter(
-    (m) => m.category === "Academic Staff"
+    (m) => m.category === "Academic Staff",
   );
   const supportingStaff = facultyData.filter(
-    (m) => m.category === "Supporting Staff"
+    (m) => m.category === "Supporting Staff",
   );
 
   const ranks = ["Professor", "Associate Professor", "Assistant Professor"]; // Enforce order

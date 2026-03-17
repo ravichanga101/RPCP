@@ -33,7 +33,8 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,20,000",
-    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PT.pdf",
+    brochureUrl:
+      "/new_data/Program%20Brochures/MPHARM PT BROCHURE 2026 (1)_compressed.pdf",
   },
   {
     title: "M.Pharm (Pharmacology)",
@@ -42,7 +43,8 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,20,000",
-    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PCOL.pdf",
+    brochureUrl:
+      "/new_data/Program%20Brochures/M.PHARM PHARMACOLOGY 2026-27 (2)_compressed.pdf",
   },
   {
     title: "M.Pharm (Pharmaceutical Quality Assurance)",
@@ -51,7 +53,8 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,20,000",
-    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20QA.pdf",
+    brochureUrl:
+      "/new_data/Program%20Brochures/M.PHARM QA 2026-27_compressed.pdf",
   },
   {
     title: "M.Pharm (Regulatory Affairs)",
@@ -60,7 +63,8 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,20,000",
-    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20RA.pdf",
+    brochureUrl:
+      "/new_data/Program%20Brochures/M.PHARM RA 2026 BROCHURE  (1)_compressed.pdf",
   },
   {
     title: "M.Pharm (Pharmaceutical Chemistry)",
@@ -69,7 +73,8 @@ const programs = [
     duration: "2 Years",
     intake: "15 Seats",
     fees: "₹ 2,20,000",
-    brochureUrl: "/new_data/Program%20Brochures/M.PHARM%20PC.pdf",
+    brochureUrl:
+      "/new_data/Program%20Brochures/M.PHARM PHARM.CHEM 2026-27_compressed.pdf",
   },
 ];
 

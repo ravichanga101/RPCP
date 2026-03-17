@@ -139,6 +139,11 @@ const navStructure = {
           icon: <Star className="h-4 w-4" />,
         },
         {
+          href: "/files/Anti-ragging committee, RPCP.pdf",
+          label: "Anti-Ragging Committee – RPCP",
+          icon: <Star className="h-4 w-4" />,
+        },
+        {
           href: "https://scpit.knimbus.com/portal/v2/custom/questions",
           label: "Old Question Paper",
           icon: <History className="h-4 w-4" />,

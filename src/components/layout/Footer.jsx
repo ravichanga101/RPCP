@@ -337,6 +337,16 @@ export function Footer() {
                   IIB
                 </a>
               </li>
+              <li>
+                <a
+                  href="/files/Best Practice-IQAC.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Best Practices
+                </a>
+              </li>
             </ul>
           </div>
 
