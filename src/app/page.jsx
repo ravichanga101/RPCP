@@ -270,7 +270,7 @@ export default function HomePage() {
               className="mt-12 text-center"
             >
               <a
-                href="https://drive.google.com/file/d/1a5SzzBQhlj833cGEmdJrmr-JlthL4t8E/view"
+                href="/files/RPCP-Brochure-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transform transition-all duration-300 border-2 border-blue-600 hover:border-blue-500"
