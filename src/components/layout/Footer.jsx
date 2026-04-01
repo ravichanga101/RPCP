@@ -347,6 +347,16 @@ export function Footer() {
                   Best Practices
                 </a>
               </li>
+              <li>
+                <a
+                  href="/files/CHARUSAT Pharmaceutical_2026 for RPCP website_compressed.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Research Consultancy and Testing Cell
+                </a>
+              </li>
             </ul>
           </div>
 
