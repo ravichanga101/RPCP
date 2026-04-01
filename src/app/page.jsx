@@ -113,7 +113,10 @@ export default function HomePage() {
           <ImageCarousel images={carouselImages} autoPlayInterval={4000} />
         </div>
 
-        <div className="relative z-20 container mx-auto px-4 w-full">
+        <div
+          className="relative z-20 container mx-auto px-4 w-full"
+          style={{ paddingTop: "calc(var(--rpcp-topbar-h, 60px) + 80px)" }}
+        >
           <div className="max-w-3xl text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: -10 }}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Menu,
   ChevronDown,
@@ -20,6 +20,12 @@ import {
   History,
   BookCheck,
   Info,
+  Phone,
+  Mail,
+  GraduationCap,
+  Briefcase,
+  BarChart2,
+  ClipboardList,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -165,16 +171,14 @@ const ListItem = ({ href, label, icon, featured = false, subItems }) => {
       <li className="relative">
         <details className="group">
           <summary
-            className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 cursor-pointer list-none ${
-              featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
-            }`}
+            className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 cursor-pointer list-none ${featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
+              }`}
           >
             <div
-              className={`h-6 w-6 rounded-md flex items-center justify-center ${
-                featured
-                  ? "bg-amber-500 text-white"
-                  : "bg-blue-100 text-blue-600"
-              }`}
+              className={`h-6 w-6 rounded-md flex items-center justify-center ${featured
+                ? "bg-amber-500 text-white"
+                : "bg-blue-100 text-blue-600"
+                }`}
             >
               {icon}
             </div>
@@ -207,14 +211,12 @@ const ListItem = ({ href, label, icon, featured = false, subItems }) => {
           href={href}
           target={href.endsWith(".pdf") ? "_blank" : undefined}
           rel={href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
-          className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${
-            featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
-          }`}
+          className={`group flex items-center gap-3 select-none rounded-lg p-3 transition-all duration-200 ${featured ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-blue-50"
+            }`}
         >
           <div
-            className={`h-6 w-6 rounded-md flex items-center justify-center ${
-              featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
-            }`}
+            className={`h-6 w-6 rounded-md flex items-center justify-center ${featured ? "bg-amber-500 text-white" : "bg-blue-100 text-blue-600"
+              }`}
           >
             {icon}
           </div>
@@ -240,16 +242,41 @@ const SmallListItem = ({ href, label, icon }) => (
   </NavigationMenuLink>
 );
 
+
+
 export function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const topBarRef = useRef(null);
+  const [topBarHeight, setTopBarHeight] = useState(60); // safe SSR default
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setIsScrolled(y > 20);
+      setIsAtTop(y === 0);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Measure actual top bar height so navbar always sits flush below it
+  useEffect(() => {
+    if (!topBarRef.current) return;
+    const update = () => {
+      if (!topBarRef.current) return;
+      const h = topBarRef.current.scrollHeight;
+      setTopBarHeight(h);
+      // Expose to page so hero can clear both bars precisely
+      document.documentElement.style.setProperty("--rpcp-topbar-h", `${h}px`);
+    };
+    const ro = new ResizeObserver(update);
+    ro.observe(topBarRef.current);
+    update();
+    return () => ro.disconnect();
   }, []);
 
   const scrollToFooter = () => {
@@ -270,248 +297,318 @@ export function MainNav() {
     : "text-amber-400 bg-amber-500/10";
 
   return (
-    <nav
-      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navClasses}`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center group focus:outline-none focus-visible:outline-none"
-          >
-            <div className="flex items-center space-x-3">
-              <img
-                src="/images/rpcplogo.png"
-                alt="RPCP College Logo"
-                className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-              <div
-                className={`transition-colors duration-300 ${
-                  isScrolled ? "text-slate-800" : "text-white"
-                }`}
-              >
-                <div className="font-semibold">Ramanbhai Patel</div>
-                <div className="text-xs opacity-80">College of Pharmacy</div>
-              </div>
-            </div>
-          </Link>
+    <>
+      {/* ─── Top Info Bar ─── */}
+      <div
+        className="w-full fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out"
+        style={{
+          top: 0,
+          maxHeight: isAtTop ? `${topBarHeight + 4}px` : "0px",
+          opacity: isAtTop ? 1 : 0,
+          overflow: "hidden",
+          pointerEvents: isAtTop ? "auto" : "none",
+        }}
+      >
+        {/* Inner — measured by ResizeObserver */}
+        <div ref={topBarRef} className="bg-white border-b border-slate-200 px-4 py-1.5">
+          <div className="container mx-auto">
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
-            <NavigationMenu>
-              <NavigationMenuList className="gap-1">
-                {navStructure.main.map((item) => (
-                  <NavigationMenuItem key={item.label}>
-                    {item.items ? (
-                      <>
-                        <NavigationMenuTrigger
-                          className={`text-sm font-medium transition-colors duration-300 bg-transparent focus:bg-transparent data-[state=open]:bg-black/5 px-4 py-2 rounded-full ${
-                            isScrolled
-                              ? "!text-black hover:!text-gray-800"
-                              : "!text-white hover:!text-gray-200"
-                          }`}
-                        >
-                          {item.label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          {item.label === "Facilities" ? (
-                            <ul className="w-[320px] p-3 bg-white rounded-xl shadow-lg border border-slate-200 max-h-[500px] overflow-y-auto">
-                              {item.items.map((subItem) => (
-                                <ListItem key={subItem.label} {...subItem} />
-                              ))}
-                            </ul>
-                          ) : (
-                            <ul className="w-[400px] p-3 grid grid-cols-2 gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
-                              {item.items.map((subItem) => (
-                                <li key={subItem.label}>
-                                  <SmallListItem {...subItem} />
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </NavigationMenuContent>
-                      </>
-                    ) : item.isScroll ? (
-                      <button
-                        onClick={scrollToFooter}
-                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
-                          isScrolled
-                            ? "text-slate-700 hover:text-slate-900"
-                            : "text-slate-100 hover:text-white"
-                        }
-                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${
-                          isScrolled
-                            ? "after:bg-amber-500"
-                            : "after:bg-amber-400"
-                        }`}
-                      >
-                        {item.label}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
-                          isScrolled
-                            ? "text-slate-700 hover:text-slate-900"
-                            : "text-slate-100 hover:text-white"
-                        } ${pathname === item.href ? activeLinkColor : ""}
-                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${
-                          isScrolled
-                            ? "after:bg-amber-500"
-                            : "after:bg-amber-400"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+            {/* ── Single row on md+, two rows on mobile ── */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-600 font-medium">
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className={`px-2 hover:bg-black/10 ${
-                    isScrolled
-                      ? "text-slate-700 hover:text-slate-900"
-                      : "text-slate-100 hover:text-white"
-                  }`}
+              {/* Logo + contact */}
+              <span className="flex items-center gap-1.5 flex-shrink-0">
+                <img src="/images/rpcplogo.png" alt="" className="h-5 w-auto object-contain" />
+              </span>
+              <a href="tel:+912697265151" className="flex items-center gap-1 hover:text-amber-600 transition-colors flex-shrink-0">
+                <Phone className="h-3 w-3" />
+                +91 2697 265151
+              </a>
+              <a href="mailto:principal.rpcp@charusat.ac.in" className="flex items-center gap-1 hover:text-amber-600 transition-colors">
+                <Mail className="h-3 w-3" />
+                principal.rpcp@charusat.ac.in
+              </a>
+
+              {/* Spacer pushes links to right on wide screens */}
+              <span className="hidden md:block flex-1" />
+
+              {/* Quick links — always visible, wrap on mobile */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-semibold ml-auto md:ml-0">
+                <a
+                  href="https://admission.charusat.ac.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="admission-link flex items-center gap-1.5 px-2 py-0.5 rounded-md text-amber-700 border border-amber-400 bg-amber-50 hover:bg-amber-100 transition-colors"
                 >
-                  <span className="sr-only">Open menu</span>
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent
-                side="right"
-                className="bg-white text-slate-900 w-[85%] sm:max-w-sm p-0"
-              >
-                <SheetHeader className="p-4 border-b border-slate-200">
-                  <SheetTitle className="flex items-center gap-3 text-base">
-                    <img
-                      src="https://www.charusat.ac.in/rpcp/images/rpcplogo.png"
-                      alt="RPCP"
-                      className="h-10 w-auto"
-                    />
-                    <span>College of Pharmacy</span>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="px-2 py-3 max-h-[calc(100dvh-5rem)] overflow-y-auto">
-                  <div className="space-y-1">
-                    {navStructure.main.map((item) => (
-                      <div key={item.label} className="rounded-md">
-                        {item.items ? (
-                          <>
-                            <button
-                              className="w-full flex items-center justify-between px-3 py-3 text-base font-medium hover:bg-slate-100 rounded-md transition-colors"
-                              onClick={() =>
-                                setOpenSection(
-                                  openSection === item.label
-                                    ? null
-                                    : item.label,
-                                )
-                              }
-                            >
-                              <span>{item.label}</span>
-                              <ChevronDown
-                                className={`h-4 w-4 transition-transform duration-200 ${
-                                  openSection === item.label
-                                    ? "rotate-180 text-amber-500"
-                                    : ""
-                                }`}
-                              />
-                            </button>
-                            {openSection === item.label && (
-                              <div className="pl-4 pt-1 pb-2 border-l-2 border-amber-200 ml-4">
-                                {item.items.map((subItem) => (
-                                  <div key={subItem.label}>
-                                    {subItem.subItems ? (
-                                      // Nested item with sub-items
-                                      <details className="group mb-1">
-                                        <summary className="flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-700 hover:text-amber-600 hover:bg-amber-500/10 rounded-md cursor-pointer list-none">
-                                          <span>{subItem.label}</span>
-                                          <ChevronDown className="h-3 w-3 transition-transform group-open:rotate-180" />
-                                        </summary>
-                                        <div className="pl-4 pt-1 space-y-1">
-                                          {subItem.subItems.map(
-                                            (nestedItem) => (
-                                              <Link
-                                                key={nestedItem.label}
-                                                href={nestedItem.href}
-                                                className="block px-3 py-2 text-xs text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
-                                                onClick={() => setIsOpen(false)}
-                                              >
-                                                {nestedItem.label}
-                                              </Link>
-                                            ),
-                                          )}
-                                        </div>
-                                      </details>
-                                    ) : (
-                                      // Regular item
-                                      <Link
-                                        href={subItem.href}
-                                        target={
-                                          subItem.href.startsWith("http") ||
-                                          subItem.href.endsWith(".pdf")
-                                            ? "_blank"
-                                            : undefined
-                                        }
-                                        rel={
-                                          subItem.href.startsWith("http") ||
-                                          subItem.href.endsWith(".pdf")
-                                            ? "noopener noreferrer"
-                                            : undefined
-                                        }
-                                        className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
-                                        onClick={() => setIsOpen(false)}
-                                      >
-                                        {subItem.label}
-                                      </Link>
-                                    )}
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </>
-                        ) : item.isScroll ? (
-                          <button
-                            onClick={() => {
-                              scrollToFooter();
-                              setIsOpen(false);
-                            }}
-                            className="block px-3 py-3 text-base font-medium rounded-md transition-colors whitespace-nowrap hover:bg-slate-100 w-full text-left"
-                          >
-                            {item.label}
-                          </button>
-                        ) : (
-                          <Link
-                            href={item.href}
-                            className={`block px-3 py-3 text-base font-medium rounded-md transition-colors whitespace-nowrap ${
-                              pathname === item.href
-                                ? "text-amber-600 bg-amber-500/10"
-                                : "hover:bg-slate-100"
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                  <GraduationCap className="h-3 w-3 text-amber-600" />
+                  Admission Application Form
+                  <span className="ml-1 px-1.5 py-px text-[9px] font-bold tracking-wide uppercase rounded-sm text-white bg-red-500 leading-tight">Open</span>
+                </a>
+                <style>{`
+                  .admission-link { animation: admissionPulse 2s ease-in-out infinite; }
+                  @keyframes admissionPulse {
+                    0%, 100% { border-color: #fbbf24; box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+                    50%       { border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.25); }
+                  }
+                `}</style>
+                <span className="text-slate-300">|</span>
+                <a href="https://www.charusat.ac.in/careers" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-slate-600 hover:text-amber-600 transition-colors">
+                  <Briefcase className="h-3 w-3" /> Career
+                </a>
+                <span className="text-slate-300">|</span>
+                <a href="/files/RPCP_NIRF_2025.pdf" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-slate-600 hover:text-amber-600 transition-colors">
+                  <BarChart2 className="h-3 w-3" /> NIRF
+                </a>
+                <span className="text-slate-300">|</span>
+                <button onClick={scrollToFooter}
+                  className="flex items-center gap-1 text-slate-600 hover:text-amber-600 transition-colors cursor-pointer">
+                  <ClipboardList className="h-3 w-3" /> IQAC
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-    </nav>
+
+      {/* ─── Main Navbar ─── */}
+      <nav
+        className={`w-full fixed left-0 right-0 z-40 transition-all duration-500 ${navClasses}`}
+        style={{ top: isAtTop ? `${topBarHeight}px` : "0px" }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="flex items-center group focus:outline-none focus-visible:outline-none"
+            >
+              <div className="flex items-center space-x-3">
+                <img
+                  src="/images/rpcplogo.png"
+                  alt="RPCP College Logo"
+                  className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                <div
+                  className={`transition-colors duration-300 ${isScrolled ? "text-slate-800" : "text-white"
+                    }`}
+                >
+                  <div className="font-semibold">Ramanbhai Patel</div>
+                  <div className="text-xs opacity-80">College of Pharmacy</div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center">
+              <NavigationMenu>
+                <NavigationMenuList className="gap-1">
+                  {navStructure.main.map((item) => (
+                    <NavigationMenuItem key={item.label}>
+                      {item.items ? (
+                        <>
+                          <NavigationMenuTrigger
+                            className={`text-sm font-medium transition-colors duration-300 bg-transparent focus:bg-transparent data-[state=open]:bg-black/5 px-4 py-2 rounded-full ${isScrolled
+                              ? "!text-black hover:!text-gray-800"
+                              : "!text-white hover:!text-gray-200"
+                              }`}
+                          >
+                            {item.label}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            {item.label === "Facilities" ? (
+                              <ul className="w-[320px] p-3 bg-white rounded-xl shadow-lg border border-slate-200 max-h-[500px] overflow-y-auto">
+                                {item.items.map((subItem) => (
+                                  <ListItem key={subItem.label} {...subItem} />
+                                ))}
+                              </ul>
+                            ) : (
+                              <ul className="w-[400px] p-3 grid grid-cols-2 gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
+                                {item.items.map((subItem) => (
+                                  <li key={subItem.label}>
+                                    <SmallListItem {...subItem} />
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </NavigationMenuContent>
+                        </>
+                      ) : item.isScroll ? (
+                        <button
+                          onClick={scrollToFooter}
+                          className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${isScrolled
+                            ? "text-slate-700 hover:text-slate-900"
+                            : "text-slate-100 hover:text-white"
+                            }
+                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${isScrolled
+                              ? "after:bg-amber-500"
+                              : "after:bg-amber-400"
+                            }`}
+                        >
+                          {item.label}
+                        </button>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${isScrolled
+                            ? "text-slate-700 hover:text-slate-900"
+                            : "text-slate-100 hover:text-white"
+                            } ${pathname === item.href ? activeLinkColor : ""}
+                        after:content-[""] after:absolute after:bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-0 hover:after:w-1/3 after:transition-all after:duration-300 ${isScrolled
+                              ? "after:bg-amber-500"
+                              : "after:bg-amber-400"
+                            }`}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className={`px-2 hover:bg-black/10 ${isScrolled
+                      ? "text-slate-700 hover:text-slate-900"
+                      : "text-slate-100 hover:text-white"
+                      }`}
+                  >
+                    <span className="sr-only">Open menu</span>
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent
+                  side="right"
+                  className="bg-white text-slate-900 w-[85%] sm:max-w-sm p-0"
+                >
+                  <SheetHeader className="p-4 border-b border-slate-200">
+                    <SheetTitle className="flex items-center gap-3 text-base">
+                      <img
+                        src="https://www.charusat.ac.in/rpcp/images/rpcplogo.png"
+                        alt="RPCP"
+                        className="h-10 w-auto"
+                      />
+                      <span>College of Pharmacy</span>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="px-2 py-3 max-h-[calc(100dvh-5rem)] overflow-y-auto">
+                    <div className="space-y-1">
+                      {navStructure.main.map((item) => (
+                        <div key={item.label} className="rounded-md">
+                          {item.items ? (
+                            <>
+                              <button
+                                className="w-full flex items-center justify-between px-3 py-3 text-base font-medium hover:bg-slate-100 rounded-md transition-colors"
+                                onClick={() =>
+                                  setOpenSection(
+                                    openSection === item.label
+                                      ? null
+                                      : item.label,
+                                  )
+                                }
+                              >
+                                <span>{item.label}</span>
+                                <ChevronDown
+                                  className={`h-4 w-4 transition-transform duration-200 ${openSection === item.label
+                                    ? "rotate-180 text-amber-500"
+                                    : ""
+                                    }`}
+                                />
+                              </button>
+                              {openSection === item.label && (
+                                <div className="pl-4 pt-1 pb-2 border-l-2 border-amber-200 ml-4">
+                                  {item.items.map((subItem) => (
+                                    <div key={subItem.label}>
+                                      {subItem.subItems ? (
+                                        // Nested item with sub-items
+                                        <details className="group mb-1">
+                                          <summary className="flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-700 hover:text-amber-600 hover:bg-amber-500/10 rounded-md cursor-pointer list-none">
+                                            <span>{subItem.label}</span>
+                                            <ChevronDown className="h-3 w-3 transition-transform group-open:rotate-180" />
+                                          </summary>
+                                          <div className="pl-4 pt-1 space-y-1">
+                                            {subItem.subItems.map(
+                                              (nestedItem) => (
+                                                <Link
+                                                  key={nestedItem.label}
+                                                  href={nestedItem.href}
+                                                  className="block px-3 py-2 text-xs text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
+                                                  onClick={() => setIsOpen(false)}
+                                                >
+                                                  {nestedItem.label}
+                                                </Link>
+                                              ),
+                                            )}
+                                          </div>
+                                        </details>
+                                      ) : (
+                                        // Regular item
+                                        <Link
+                                          href={subItem.href}
+                                          target={
+                                            subItem.href.startsWith("http") ||
+                                              subItem.href.endsWith(".pdf")
+                                              ? "_blank"
+                                              : undefined
+                                          }
+                                          rel={
+                                            subItem.href.startsWith("http") ||
+                                              subItem.href.endsWith(".pdf")
+                                              ? "noopener noreferrer"
+                                              : undefined
+                                          }
+                                          className="block px-3 py-2.5 text-sm text-slate-600 hover:text-amber-600 hover:bg-amber-500/10 rounded-md transition-all"
+                                          onClick={() => setIsOpen(false)}
+                                        >
+                                          {subItem.label}
+                                        </Link>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </>
+                          ) : item.isScroll ? (
+                            <button
+                              onClick={() => {
+                                scrollToFooter();
+                                setIsOpen(false);
+                              }}
+                              className="block px-3 py-3 text-base font-medium rounded-md transition-colors whitespace-nowrap hover:bg-slate-100 w-full text-left"
+                            >
+                              {item.label}
+                            </button>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className={`block px-3 py-3 text-base font-medium rounded-md transition-colors whitespace-nowrap ${pathname === item.href
+                                ? "text-amber-600 bg-amber-500/10"
+                                : "hover:bg-slate-100"
+                                }`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.label}
+                            </Link>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
 
