@@ -120,7 +120,7 @@ const navStructure = {
           icon: <BookCopy className="h-4 w-4" />,
         },
         {
-          href: "https://charusat.edu.in:912/OthPaymentApp/",
+          href: "https://support.charusat.edu.in/transcript/",
           label: "Online Transcript",
           icon: <FileText className="h-4 w-4" />,
         },
@@ -130,7 +130,7 @@ const navStructure = {
           icon: <Banknote className="h-4 w-4" />,
         },
         {
-          href: "https://charusat.edu.in:912/Uniexamresult/",
+          href: "https://support.charusat.edu.in/Uniexamresult/",
           label: "University Result",
           icon: <Award className="h-4 w-4" />,
         },
