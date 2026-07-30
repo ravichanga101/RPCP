@@ -67,7 +67,7 @@ export default function HomePage() {
       description:
         "Comprehensive pharmacy education with hands-on training and industry exposure.",
       icon: <GraduationCap />,
-      Note:"* Fees approval is subject to Appellate Committee.",
+      Note: "* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "M.Pharm",
@@ -77,7 +77,7 @@ export default function HomePage() {
       description:
         "Specialized programs in Pharmaceutical Technology, Pharmacology, and Quality Assurance.",
       icon: <Microscope />,
-      Note:"* Fees approval is subject to Appellate Committee.",
+      Note: "* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "M.Pharm (Pharmaceutical Chemistry)",
@@ -87,7 +87,7 @@ export default function HomePage() {
       description:
         "Master's program specializing in Pharmaceutical Chemistry with advanced lab work and research.",
       icon: <Microscope />,
-      Note:"* Fees approval is subject to Appellate Committee.",
+      Note: "* Fees approval is subject to Appellate Committee.",
     },
     {
       title: "Ph.D.",
@@ -273,15 +273,24 @@ export default function HomePage() {
                   Pharmacy Category
                 </p>
               </motion.div>
-              <motion.img
-                src="/new_data/Logo/gsirf.png"
-                alt="GSIRF Rating - Government of Gujarat"
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
-              />
+                className="flex items-center justify-center gap-4 sm:gap-6"
+              >
+                <img
+                  src="/new_data/Logo/gsirf.png"
+                  alt="GSIRF Rating - Government of Gujarat"
+                  className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+                />
+                <img
+                  src="/images/RPCP-QCI.webp"
+                  alt="RPCP QCI audit result"
+                  className="h-24 md:h-28 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Get Brochure Button */}
@@ -523,7 +532,6 @@ export default function HomePage() {
                         <span>{program.fees}</span>
                       </div>
                       <div className="flex justify-right text-sm text-slate-600">
-                        
                         <span>{program.Note}</span>
                       </div>
                     </div>
