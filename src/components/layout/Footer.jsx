@@ -422,7 +422,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-6 text-sm">
               <a
-                href="https://charusat.edu.in:912/Uniexamresult/"
+                href="https://support.charusat.edu.in/Uniexamresult/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -438,7 +438,7 @@ export function Footer() {
                 Admissions
               </a>
               <a
-                href="https://charusat.edu.in:912/OthPaymentApp/"
+                href="https://support.charusat.edu.in/transcript/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
