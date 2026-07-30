@@ -100,6 +100,27 @@ export default function HomePage() {
     },
   ];
 
+  const studentClubs = [
+    {
+      title: "Orator Forum",
+      logo: "/images/student_club/Orator%20%20Forum_%20Keval%20%20Raval.webp",
+      description:
+        "The Orators Forum is a student-led club dedicated to strengthening scientific communication, critical thinking, public speaking, and evidence-based discussion. It provides students with opportunities to develop confidence, leadership, teamwork, and professional presentation skills through debates, discussions, critiques, and academic speaking activities.",
+    },
+    {
+      title: "Nirman RX Club",
+      logo: "/images/student_club/NIRMAN%20RX_Swati%20Mam.webp",
+      description:
+        "Nirman RX Club is a student-driven innovation forum that nurtures creativity, problem-solving, and entrepreneurial thinking in pharmaceutical sciences. The club empowers students to transform ideas into impactful healthcare solutions through innovation, design thinking, research, and interdisciplinary collaboration.",
+    },
+    {
+      title: "NaturoManthan Club",
+      logo: "/images/student_club/NaturoManthan_Purvi%20Shah.webp",
+      description:
+        "NaturoManthan Club aims to provide a dedicated platform for students to explore the intersection of Ethnobotany, Phytochemistry, and Computational Biology (In silico studies).",
+    },
+  ];
+
   return (
     <div className="bg-white text-slate-800">
       {/* Hero Section */}
@@ -547,6 +568,61 @@ export default function HomePage() {
             >
               Click to view all programs
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Corner Section */}
+      <section id="student-corner" className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">
+              Student Corner
+            </h2>
+            <h3 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              RPCP Student Clubs
+            </h3>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Explore student-led clubs that strengthen communication,
+              innovation, and interdisciplinary learning at RPCP.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {studentClubs.map((club, index) => (
+              <motion.div
+                key={club.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                viewport={{ once: true, amount: 0.4 }}
+                className="h-full"
+              >
+                <Card className="h-full border-slate-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <CardContent className="p-8 flex h-full flex-col">
+                    <div className="flex items-center justify-center h-40 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
+                      <img
+                        src={club.logo}
+                        alt={club.title}
+                        className="max-h-32 w-auto object-contain drop-shadow-md"
+                      />
+                    </div>
+                    <h4 className="text-2xl font-bold text-slate-900 mb-4 text-center">
+                      {club.title}
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed text-center flex-grow">
+                      {club.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
