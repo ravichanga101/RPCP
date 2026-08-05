@@ -162,7 +162,7 @@ const navStructure = {
         {
           href: "https://drive.google.com/file/d/1vXAiTdu9-jW41W7hlVgKEMG5BAjIVOMy/view?usp=sharing",
           label: "Student Handbook",
-          icon: <History className="h-4 w-4" />,
+          icon: <BookCopy className="h-4 w-4" />,
         },
       ],
     },
