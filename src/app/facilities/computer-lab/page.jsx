@@ -1,30 +1,18 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
+import ImageCarousel from "@/components/shared/ImageCarousel";
 
-const CheckIcon = ({ className }) => (
-  <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path
-      fillRule="evenodd"
-      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+const carouselImages = [
+  "/images/Computer_Lab_1.webp",
+  "/images/Computer_Lab_2.webp",
+  "/images/Computer_Lab_3.webp",
+  "/images/Computer_Lab_4.webp",
+  "/images/Computer_Lab_5.webp",
+];
 
 export default function ComputerLab() {
-  const features = [
-    "Provided with separate computers with stereophonic headphones and mic to facilitate conversations between staff members and students.",
-    "Provided with projector and LCD for seminar or presentation during lecture and practical session.",
-    "Also serves as a seminar room and computer laboratory.",
-  ];
-
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -49,37 +37,70 @@ export default function ComputerLab() {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="relative h-96 w-full">
-            <Image
-              src="https://www.charusat.ac.in/rpcp/images/labs/lab6.png"
-              alt="Computer Laboratory"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="p-8 lg:p-12">
+        <section className="mx-auto mb-10 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative overflow-hidden rounded-2xl shadow-2xl bg-black"
+          >
+            <div className="relative h-[340px] sm:h-[420px] lg:h-[540px]">
+              <ImageCarousel
+                images={carouselImages}
+                autoPlayInterval={3000}
+                imageFit="contain"
+                imageBackground="#0f172a"
+              />
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#202A44]/55 via-transparent to-transparent" />
+          </motion.div>
+        </section>
+
+        <section className="mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="bg-white rounded-xl shadow-lg p-8 lg:p-10"
+          >
             <h2 className="text-3xl font-bold text-[#202A44]">
               Computer Laboratory
             </h2>
             <div className="w-24 h-1 bg-[#FBCB0A] mt-3 mb-6"></div>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            <p className="text-gray-700 text-lg leading-relaxed text-justify mb-8">
               Designed specially to provide students' basic theoretical and
               practical knowledge of communication/ language as a part of their
               academic curriculum.
             </p>
 
             <ul className="space-y-4">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckIcon className="h-6 w-6 text-[#FBCB0A] flex-shrink-0 mt-0.5" />
-                  <span className="ml-3 text-gray-800">{feature}</span>
-                </li>
-              ))}
+              <li className="flex items-start">
+                <span className="text-[#FBCB0A] flex-shrink-0 mt-1">•</span>
+                <span className="ml-3 text-gray-800">
+                  Provided with separate computers with stereophonic headphones
+                  and mic to facilitate conversations between staff members and
+                  students.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#FBCB0A] flex-shrink-0 mt-1">•</span>
+                <span className="ml-3 text-gray-800">
+                  Provided with projector and LCD for seminar or presentation
+                  during lecture and practical session.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#FBCB0A] flex-shrink-0 mt-1">•</span>
+                <span className="ml-3 text-gray-800">
+                  Also serves as a seminar room and computer laboratory.
+                </span>
+              </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </section>
       </div>
     </div>
   );
