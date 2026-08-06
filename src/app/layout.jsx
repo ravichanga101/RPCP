@@ -1,11 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { MainNav } from "@/components/layout/MainNav";
 import { Footer } from "@/components/layout/Footer";
 import MajorRecruiters from "@/components/shared/MajorRecruiters";
 import { motion, AnimatePresence } from "framer-motion";
+
+const MainNav = dynamic(
+  () => import("@/components/layout/MainNav").then((mod) => mod.MainNav),
+  { ssr: false },
+);
 
 const inter = Inter({ subsets: ["latin"] });
 

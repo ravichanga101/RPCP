@@ -1,7 +1,17 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
+import ImageCarousel from "@/components/shared/ImageCarousel";
+
+const carouselImages = [
+  "/images/classroom1.webp",
+  "/images/classroom2.webp",
+  "/images/classroom3.webp",
+  "/images/classroom4.webp",
+  "/images/classroom5.webp",
+  "/images/classroom6.webp",
+];
 
 export default function Classroom() {
   return (
@@ -28,27 +38,45 @@ export default function Classroom() {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="relative h-96 w-full">
-            <Image
-              src="https://www.charusat.ac.in/rpcp/images/labs/lab5.png"
-              alt="Classrooms"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="p-8 lg:p-12">
+        <section className="mx-auto mb-10 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative overflow-hidden rounded-2xl shadow-2xl bg-black"
+          >
+            <div className="relative h-[340px] sm:h-[420px] lg:h-[540px]">
+              <ImageCarousel
+                images={carouselImages}
+                autoPlayInterval={3000}
+                imageFit="contain"
+                imageBackground="#0f172a"
+              />
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#202A44]/55 via-transparent to-transparent" />
+          </motion.div>
+        </section>
+
+        <section className="mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="bg-white rounded-xl shadow-lg p-8 lg:p-10"
+          >
             <h2 className="text-3xl font-bold text-[#202A44]">Class Rooms</h2>
             <div className="w-24 h-1 bg-[#FBCB0A] mt-3 mb-6"></div>
 
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-lg leading-relaxed text-justify">
               Class rooms are Air conditioned, well furnished and equipped with
               LCD projector and Computer facility which enables interactive and
               ICT based teaching-learning process with good and ambient learning
               environment.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </section>
       </div>
     </div>
   );
