@@ -77,6 +77,12 @@ const navStructure = {
           icon: <BookCheck className="h-5 w-5" />,
         },
         {
+          href: "/facilities/sophisticated-instrument-lab",
+          label: "Sophisticated Instrument Lab",
+          description: "Advanced analytical instrumentation support",
+          icon: <Microscope className="h-5 w-5" />,
+        },
+        {
           label: "State of Art Facility",
           description: "World-class research infrastructure",
           icon: <Star className="h-5 w-5" />,
