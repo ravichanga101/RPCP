@@ -161,6 +161,10 @@ const navStructure = {
         },
       ],
     },
+    {
+      href: "/academic-enrichment",
+      label: "Academic Enrichment Activities",
+    },
     { href: "/research", label: "Research" },
     { href: "/placement", label: "Placement" },
     { href: "/faculty", label: "Staff" },
@@ -418,7 +422,7 @@ export function MainNav() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center group focus:outline-none focus-visible:outline-none"
+              className="flex shrink-0 items-center group focus:outline-none focus-visible:outline-none"
             >
               <div className="flex items-center space-x-3">
                 <img
@@ -427,26 +431,28 @@ export function MainNav() {
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
                 <div
-                  className={`transition-colors duration-300 ${
+                  className={`min-w-0 transition-colors duration-300 ${
                     isScrolled ? "text-slate-800" : "text-white"
                   }`}
                 >
-                  <div className="font-semibold">Ramanbhai Patel</div>
-                  <div className="text-xs opacity-80">College of Pharmacy</div>
+                  <div className="truncate font-semibold">Ramanbhai Patel</div>
+                  <div className="truncate text-xs opacity-80">
+                    College of Pharmacy
+                  </div>
                 </div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden min-w-0 lg:flex items-center">
               <NavigationMenu>
-                <NavigationMenuList className="gap-1">
+                <NavigationMenuList className="gap-0.5">
                   {navStructure.main.map((item) => (
                     <NavigationMenuItem key={item.label}>
                       {item.items ? (
                         <>
                           <NavigationMenuTrigger
-                            className={`text-sm font-medium transition-colors duration-300 bg-transparent focus:bg-transparent data-[state=open]:bg-black/5 px-4 py-2 rounded-full ${
+                            className={`text-sm font-medium transition-colors duration-300 bg-transparent focus:bg-transparent data-[state=open]:bg-black/5 px-2 py-1 rounded-full ${
                               isScrolled
                                 ? "!text-black hover:!text-gray-800"
                                 : "!text-white hover:!text-gray-200"
@@ -456,13 +462,21 @@ export function MainNav() {
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
                             {item.label === "Facilities" ? (
-                              <ul className="w-[320px] p-3 bg-white rounded-xl shadow-lg border border-slate-200 max-h-[500px] overflow-y-auto">
+                              <ul className="w-[300px] p-3 bg-white rounded-xl shadow-lg border border-slate-200 max-h-[500px] overflow-y-auto">
                                 {item.items.map((subItem) => (
                                   <ListItem key={subItem.label} {...subItem} />
                                 ))}
                               </ul>
+                            ) : item.label === "Events" ? (
+                              <ul className="w-[200px] p-2 flex flex-col gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
+                                {item.items.map((subItem) => (
+                                  <li key={subItem.label}>
+                                    <SmallListItem {...subItem} />
+                                  </li>
+                                ))}
+                              </ul>
                             ) : (
-                              <ul className="w-[400px] p-3 grid grid-cols-2 gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
+                              <ul className="w-[380px] p-3 grid grid-cols-2 gap-1 bg-white rounded-xl shadow-lg border border-slate-200">
                                 {item.items.map((subItem) => (
                                   <li key={subItem.label}>
                                     <SmallListItem {...subItem} />
@@ -475,7 +489,7 @@ export function MainNav() {
                       ) : item.isScroll ? (
                         <button
                           onClick={scrollToFooter}
-                          className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
+                          className={`relative h-9 px-2 py-1 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
                             isScrolled
                               ? "text-slate-700 hover:text-slate-900"
                               : "text-slate-100 hover:text-white"
@@ -491,7 +505,11 @@ export function MainNav() {
                       ) : (
                         <Link
                           href={item.href}
-                          className={`relative h-10 px-4 py-2 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
+                          className={`relative h-9 px-2 py-1 inline-flex items-center text-sm font-medium transition-colors duration-300 whitespace-nowrap rounded-full ${
+                            item.label === "Academic Enrichment Activities"
+                              ? "px-1.5 text-[13px] lg:text-sm"
+                              : ""
+                          } ${
                             isScrolled
                               ? "text-slate-700 hover:text-slate-900"
                               : "text-slate-100 hover:text-white"
