@@ -25,6 +25,40 @@ export default function DepartmentalLab() {
     "All laboratories have basic facilities like gas and water supply, exhaust system, hot air oven, magnetic stirrer, microscopes, water bath etc.",
   ];
 
+  const departments = [
+    {
+      title: "Chemistry and Analysis",
+      images: [
+        "/images/Departmental%20Labs/Chemistry%20and%20Analysis/IMG_5172.jpg",
+        "/images/Departmental%20Labs/Chemistry%20and%20Analysis/IMG_5168(1).jpg",
+        "/images/Departmental%20Labs/Chemistry%20and%20Analysis/IMG_5167(1).jpg",
+      ],
+    },
+    {
+      title: "Pharma cognosy",
+      images: [
+        "/images/Departmental%20Labs/Pharma%20cognosy/IMG_5176(1).jpg",
+        "/images/Departmental%20Labs/Pharma%20cognosy/IMG_5177(1).jpg",
+      ],
+    },
+    {
+      title: "Pharmaceutics",
+      images: [
+        "/images/Departmental%20Labs/Pharmaceutics/IMG_5200.jpg",
+        "/images/Departmental%20Labs/Pharmaceutics/IMG_5198(1).jpg",
+        "/images/Departmental%20Labs/Pharmaceutics/IMG_5197(1).jpg",
+      ],
+    },
+    {
+      title: "Pharmacology",
+      images: [
+        "/images/Departmental%20Labs/Pharmacology/IMG_5188(1).jpg",
+        "/images/Departmental%20Labs/Pharmacology/IMG_5183.jpg",
+        "/images/Departmental%20Labs/Pharmacology/IMG_5182.jpg",
+      ],
+    },
+  ];
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -49,15 +83,42 @@ export default function DepartmentalLab() {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="relative h-96 w-full">
-            <Image
-              src="https://www.charusat.ac.in/rpcp/images/labs/lab4.png"
-              alt="Departmental Laboratory"
-              fill
-              className="object-contain"
-            />
-          </div>
+        <div className="space-y-10">
+          {departments.map((department) => (
+            <section
+              key={department.title}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="p-8 lg:p-10 border-b border-gray-100">
+                <h3 className="text-2xl lg:text-3xl font-bold text-[#202A44]">
+                  {department.title}
+                </h3>
+                <div className="w-20 h-1 bg-[#FBCB0A] mt-3 mb-4"></div>
+                <p className="text-gray-600">
+                  Images from the {department.title} department.
+                </p>
+              </div>
+
+              <div className="grid gap-4 p-4 sm:p-6 sm:grid-cols-2 lg:grid-cols-3">
+                {department.images.map((image, index) => (
+                  <div
+                    key={image}
+                    className="relative aspect-[4/3] rounded-lg overflow-hidden bg-gray-100"
+                  >
+                    <Image
+                      src={image}
+                      alt={`${department.title} laboratory ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <section className="bg-white rounded-xl shadow-lg overflow-hidden mt-12">
           <div className="p-8 lg:p-12">
             <h2 className="text-3xl font-bold text-[#202A44]">
               Departmental Laboratory
@@ -65,7 +126,7 @@ export default function DepartmentalLab() {
             <div className="w-24 h-1 bg-[#FBCB0A] mt-3 mb-6"></div>
 
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Total 11 laboratories are spread over four major departments' viz.
+              Total 11 laboratories are spread over four major departments viz.
               Pharmaceutics, Pharmaceutical Chemistry and Analysis, Pharmacology
               and Pharmacognosy. All laboratories are spacious with good light
               and air ventilation availability.
@@ -80,7 +141,7 @@ export default function DepartmentalLab() {
               ))}
             </ul>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
