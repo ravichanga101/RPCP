@@ -4,14 +4,7 @@ import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import ImageCarousel from "@/components/shared/ImageCarousel";
 
-const carouselImages = [
-  "/images/classroom1.webp",
-  "/images/classroom2.webp",
-  "/images/classroom3.webp",
-  "/images/classroom4.webp",
-  "/images/classroom5.webp",
-  "/images/classroom6.webp",
-];
+const carouselImages = ["/images/classroom.webp"];
 
 export default function Classroom() {
   return (
@@ -52,9 +45,10 @@ export default function Classroom() {
                 autoPlayInterval={3000}
                 imageFit="contain"
                 imageBackground="#0f172a"
+                overlayClassName="hidden"
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#202A44]/55 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#202A44]/15 via-transparent to-transparent" />
           </motion.div>
         </section>
 

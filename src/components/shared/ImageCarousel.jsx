@@ -8,17 +8,24 @@ const ImageCarousel = ({
   autoPlayInterval = 3000,
   imageFit = "cover",
   imageBackground = "transparent",
+  overlayClassName = "bg-gradient-to-r from-black/60 via-black/40 to-transparent",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const hasMultipleImages = images.length > 1;
 
   // Auto-play functionality
   useEffect(() => {
+    if (!hasMultipleImages) {
+      setCurrentIndex(0);
+      return undefined;
+    }
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [autoPlayInterval, images.length]);
+  }, [autoPlayInterval, hasMultipleImages, images.length]);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
@@ -52,22 +59,26 @@ const ImageCarousel = ({
             />
 
             {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+            <div className={`absolute inset-0 ${overlayClassName}`} />
           </motion.div>
         ))}
       </div>
 
       {/* Subtle Progress Indicator */}
-      <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-1.5 sm:space-x-2">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500 ${
-              index === currentIndex ? "bg-yellow-400 scale-125" : "bg-white/30"
-            }`}
-          />
-        ))}
-      </div>
+      {hasMultipleImages && (
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-1.5 sm:space-x-2">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500 ${
+                index === currentIndex
+                  ? "bg-yellow-400 scale-125"
+                  : "bg-white/30"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
