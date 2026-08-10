@@ -166,7 +166,7 @@ const navStructure = {
           icon: <History className="h-4 w-4" />,
         },
         {
-          href: "https://drive.google.com/file/d/1vXAiTdu9-jW41W7hlVgKEMG5BAjIVOMy/view?usp=sharing",
+          href: "https://drive.google.com/drive/folders/1f5zMRD14hH0mY1gkCj1kICtrKpW5gBSq?usp=sharing",
           label: "Student Handbook",
           icon: <BookCopy className="h-4 w-4" />,
         },
