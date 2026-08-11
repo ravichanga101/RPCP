@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import MajorRecruiters from "@/components/shared/MajorRecruiters";
@@ -12,12 +11,10 @@ const MainNav = dynamic(
   { ssr: false },
 );
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className="font-sans">
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm border-b">
           <MainNav />
         </header>

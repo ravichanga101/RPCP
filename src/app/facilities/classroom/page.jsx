@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import ImageCarousel from "@/components/shared/ImageCarousel";
 
-const carouselImages = ["/images/classroom.webp"];
+const carouselImages = [
+  "/images/classroom1.webp",
+  "/images/classroom5.webp",
+  "/images/classroom6.webp",
+  "/images/classroom7.webp",
+];
 
 export default function Classroom() {
   return (
