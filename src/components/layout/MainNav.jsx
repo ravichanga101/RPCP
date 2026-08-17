@@ -385,11 +385,28 @@ export function MainNav() {
                     Open
                   </span>
                 </a>
+                <a
+                  href="/management-quota-admission"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mq-link flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[#0f172a] border border-amber-300 bg-amber-100/80 hover:bg-amber-200 transition-colors"
+                >
+                  <FileText className="h-3 w-3 text-amber-700" />
+                  Management Quota Admission 2026
+                  <span className="ml-1 px-1.5 py-px text-[9px] font-bold tracking-wide uppercase rounded-sm text-white bg-amber-600 leading-tight">
+                    Open
+                  </span>
+                </a>
                 <style>{`
                   .admission-link { animation: admissionPulse 2s ease-in-out infinite; }
+                  .mq-link { animation: mqPulse 2s ease-in-out infinite; }
                   @keyframes admissionPulse {
                     0%, 100% { border-color: #fbbf24; box-shadow: 0 0 0 0 rgba(245,158,11,0); }
                     50%       { border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.25); }
+                  }
+                  @keyframes mqPulse {
+                    0%, 100% { border-color: #fcd34d; box-shadow: 0 0 0 0 rgba(234,179,8,0); }
+                    50%       { border-color: #d97706; box-shadow: 0 0 0 3px rgba(234,179,8,0.18); }
                   }
                 `}</style>
                 <span className="text-slate-300">|</span>
